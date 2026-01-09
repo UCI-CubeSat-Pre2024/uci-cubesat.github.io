@@ -88,41 +88,6 @@
   font-family: 'Kufam', sans-serif;
 }
 
-.roles-navigation {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin: 40px 0;
-  font-size: 16px;
-  font-family: 'Kufam', sans-serif;
-  padding: 10px;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 30px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.roles-navigation button {
-  background: none;
-  border: none;
-  color: var(--color-text-muted);
-  font-weight: 500;
-  cursor: pointer;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-family: 'Kufam', sans-serif;
-}
-
-.roles-navigation button:hover {
-  color: white;
-}
-
-.roles-navigation button.active {
-  color: white;
-  background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
-}
-
 .team-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
