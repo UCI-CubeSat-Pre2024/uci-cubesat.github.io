@@ -24,13 +24,7 @@ const WhatWeDo = () => {
       title: "Power",
       description:
         "Manages the energy systems of the satellite, including solar panels and batteries, to maintain continuous power supply for all subsystems.",
-      image: "/photos/Power.png", 
-    },
-    {
-      title: "Operations",
-      description:
-        "Manages sponsorship outreach, networking, and mentorship while overseeing website development. They also track finances and coordinate workshops to support the CubeSat project.",
-      image: "/photos/Operations.png", 
+      image: "/photos/Power.png",
     },
   ];
 

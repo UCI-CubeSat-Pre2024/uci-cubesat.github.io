@@ -31,15 +31,11 @@ export default function Home() {
                     ref={statsAnimation.ref}
                     className={`stat-fragment animate-on-scroll ${statsAnimation.isVisible ? 'visible' : ''}`}
                 >
-                    <div id="left-card" className="card">
+                    <div className="card">
                         <CountUp end={10} suffix="+" duration={4} />
                         <h2>Years In Progress</h2>
                     </div>
-                    <div id="mid-card" className="card">
-                        <h1>2028</h1>
-                        <h2>Anticipated Launch</h2>
-                    </div>
-                    <div id="right-card" className="card">
+                    <div className="card">
                         <CountUp end={200} suffix="+" duration={4} />
                         <h2>Members</h2>
                     </div>

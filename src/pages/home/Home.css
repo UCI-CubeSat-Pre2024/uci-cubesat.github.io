@@ -14,7 +14,7 @@
 }
 
 /* Button styling */
-button:not(.navbtn):not(.hamburger-menu):not(.roles-navigation button) {
+button:not(.navbtn):not(.hamburger-menu):not(.circular-progress-item):not(.view-all-btn) {
   background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
   box-shadow: 0 4px 15px var(--color-primary-glow);
   font-family: 'Kufam', sans-serif;
@@ -23,7 +23,7 @@ button:not(.navbtn):not(.hamburger-menu):not(.roles-navigation button) {
   transition: opacity 0.2s ease;
 }
 
-button:not(.navbtn):not(.hamburger-menu):not(.roles-navigation button):hover {
+button:not(.navbtn):not(.hamburger-menu):not(.circular-progress-item):not(.view-all-btn):hover {
   opacity: 0.9;
 }
 
