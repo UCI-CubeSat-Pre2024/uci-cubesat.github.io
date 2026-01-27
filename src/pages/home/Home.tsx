@@ -6,7 +6,9 @@ import { CountUp } from '../../components/CountUp';
 export default function Home() {
     const statsAnimation = useScrollAnimation<HTMLElement>();
     const aboutAnimation = useScrollAnimation<HTMLElement>();
+    const missionAnimation = useScrollAnimation<HTMLElement>();
     const sponsorsAnimation = useScrollAnimation<HTMLElement>();
+    const joinAnimation = useScrollAnimation<HTMLElement>();
 
     return (
         <>
@@ -30,10 +32,8 @@ export default function Home() {
                     </p>
                     <h1 className="hero-title">UCI CubeSat</h1>
                     <p className="hero-body">
-                        Our mission is to design, test, and launch a modular nanosatellite
-                        into low-Earth orbit. By working with cutting-edge thermal control
-                        technology, we aim to set a standard for future student-led space
-                        missions and research at UCI.
+                        Designing, testing, and launching a modular nanosatellite into
+                        low-Earth orbit.
                     </p>
                     <Link to="/aboutus/what-we-do" className="hero-cta">
                         Learn More →
@@ -93,6 +93,34 @@ export default function Home() {
             </section>
 
             <section
+                ref={missionAnimation.ref}
+                className={`mission-section animate-on-scroll ${missionAnimation.isVisible ? 'visible' : ''}`}
+            >
+                <div className="mission-text">
+                    <p className="mission-label">The Mission</p>
+                    <h2>AntSat 01</h2>
+                    <p>
+                        Our 2U nanosatellite carries a Variable Emissivity Device (VED)
+                        developed by UCI's Spacecraft Thermal Management Systems lab.
+                        We're testing whether adjustable-emissivity materials can serve
+                        as an inexpensive thermal regulation method for future spacecraft.
+                    </p>
+                    <Link to="/aboutus/what-we-do" className="mission-link">
+                        Explore Subsystems →
+                    </Link>
+                </div>
+                <div className="mission-render">
+                    <img
+                        src="/renders/antsat01.png"
+                        alt="AntSat 01 satellite render"
+                        width={400}
+                        height={400}
+                        loading="lazy"
+                    />
+                </div>
+            </section>
+
+            <section
                 ref={sponsorsAnimation.ref}
                 className={`sponsors-section animate-on-scroll ${sponsorsAnimation.isVisible ? 'visible' : ''}`}
             >
@@ -139,6 +167,20 @@ export default function Home() {
                         <img src="/images/ANSYS_logo2.png" alt="" width={150} height={38} />
                     </div>
                 </div>
+            </section>
+
+            <section
+                ref={joinAnimation.ref}
+                className={`join-section animate-on-scroll ${joinAnimation.isVisible ? 'visible' : ''}`}
+            >
+                <h2>Join the Team</h2>
+                <p>
+                    We're looking for undergraduate students in EECS, MAE, and related
+                    fields who want hands-on satellite engineering experience.
+                </p>
+                <Link to="/contact" className="join-cta">
+                    Get in Touch →
+                </Link>
             </section>
         </>
     );

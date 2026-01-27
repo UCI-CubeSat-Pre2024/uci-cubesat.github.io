@@ -21,7 +21,7 @@
 }
 
 .team-makeup-title {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 24px;
     font-weight: 600;
     margin: 0;
@@ -113,7 +113,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 17px;
     font-weight: 600;
     color: var(--text-primary);

@@ -17,7 +17,7 @@
 }
 
 .contact-heading {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-weight: 600;
     font-size: 48px;
     color: var(--text-primary);

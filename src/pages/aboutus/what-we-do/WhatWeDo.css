@@ -14,7 +14,7 @@
 }
 
 .wwd-header h1 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-weight: 700;
     font-size: 48px;
     color: var(--text-primary);
@@ -55,7 +55,7 @@
 }
 
 .wwd-text h2 {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-weight: 600;
     font-size: 28px;
     color: var(--text-primary);

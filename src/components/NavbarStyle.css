@@ -182,7 +182,7 @@
 }
 
 .mobile-link {
-    font-family: 'Space Grotesk', sans-serif;
+    font-family: 'Inter', system-ui, sans-serif;
     font-size: 32px;
     font-weight: 700;
     color: var(--text-muted);
