@@ -259,13 +259,13 @@ const MeetTheTeam = () => {
           </p>
         </div>
         <div className="mission-image">
-          <img src="/photos/Mission.png" alt="Mission Placeholder" />
+          <img src="/photos/Mission.png" alt="UCI CubeSat mission" width={480} height={480} loading="lazy" />
         </div>
       </div>
       <div className="meet-the-team-container">
         <div className="header">
           <h1>
-            Meet <span className="highlight">Our Team.</span>
+            Meet Our Team.
           </h1>
           <p>
             A driven set of undergraduates backed by industry leaders such as
