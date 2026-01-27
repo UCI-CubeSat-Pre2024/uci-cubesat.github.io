@@ -4,16 +4,7 @@ export default function Contact() {
     return (
         <div className="contact-container">
             <div className="contact-info-box">
-                <div className="contact-header">
-                    <div id="header1">
-                        <h1>LET'S</h1>
-                        <span className="line"></span>
-                    </div>
-                    <div id="header2">
-                        <span className="line"></span>
-                        <h1>CONNECT</h1>
-                    </div>
-                </div>
+                <h1 className="contact-heading">Let's Connect</h1>
                 <div className="contacts">
                     <div className="contact-card">
                         <span className="contact-label">Project Manager</span>
@@ -33,4 +24,4 @@ export default function Contact() {
             </div>
         </div>
     );
-} 
+}

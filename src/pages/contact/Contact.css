@@ -4,21 +4,7 @@
     align-items: center;
     width: 100%;
     min-height: 60vh;
-    padding: 80px 20px;
-    position: relative;
-}
-
-/* Decorative background */
-.contact-container::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 600px;
-    height: 600px;
-    background: radial-gradient(circle, rgba(111, 0, 255, 0.1) 0%, transparent 70%);
-    pointer-events: none;
+    padding: 80px 24px;
 }
 
 .contact-info-box {
@@ -26,57 +12,22 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    position: relative;
-    z-index: 1;
     width: 100%;
-    max-width: 600px;
+    max-width: 560px;
 }
 
-/* Header styling */
-.contact-header {
-    margin-bottom: 60px;
+.contact-heading {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    color: var(--text-primary);
+    margin: 0 0 48px;
 }
 
-#header1,
-#header2 {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 25px;
-}
-
-#header1 h1,
-#header2 h1 {
-    font-family: 'Konkhmer Sleokchher', sans-serif;
-    font-size: 72px;
-    font-weight: 400;
-    margin: 0;
-    line-height: 1;
-}
-
-#header2 h1 {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-}
-
-.line {
-    display: block;
-    width: 100px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.5));
-}
-
-#header2 .line {
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.3), transparent);
-}
-
-/* Contacts section */
 .contacts {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 16px;
     width: 100%;
 }
 
@@ -84,93 +35,49 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-    padding: 24px 32px;
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid var(--color-border);
-    border-radius: 16px;
+    padding: 24px 28px;
+    background: var(--bg-orbital);
+    border: 1px solid var(--border-starlight);
+    border-radius: 12px;
     text-align: left;
 }
 
 .contact-label {
-    font-family: 'Kufam', sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--color-text-muted);
+    color: var(--text-dust);
 }
 
 .contact-name {
-    font-family: 'Kufam', sans-serif;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 500;
-    color: var(--color-text-primary);
+    color: var(--text-primary);
 }
 
 .contact-card a {
-    font-family: 'Kufam', sans-serif;
-    font-size: 15px;
-    color: var(--color-accent);
+    font-size: 14px;
     font-weight: 500;
-    margin-top: 4px;
+    color: var(--accent-earth);
+    margin-top: 2px;
 }
 
-/* Responsive */
-@media screen and (max-width: 768px) {
+.contact-card a:hover {
+    color: var(--accent-atmosphere);
+}
+
+@media screen and (max-width: 640px) {
     .contact-container {
-        padding: 60px 20px;
+        padding: 48px 20px;
     }
 
-    #header1 h1,
-    #header2 h1 {
-        font-size: 48px;
-    }
-
-    .line {
-        width: 60px;
+    .contact-heading {
+        font-size: 32px;
+        margin-bottom: 32px;
     }
 
     .contact-card {
-        padding: 20px 24px;
-    }
-
-    .contact-name {
-        font-size: 16px;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .contact-container {
-        padding: 40px 15px;
-        min-height: 50vh;
-    }
-
-    #header1 h1,
-    #header2 h1 {
-        font-size: 36px;
-    }
-
-    .line {
-        width: 40px;
-    }
-
-    .contact-header {
-        margin-bottom: 40px;
-    }
-
-    .contact-card {
-        padding: 16px 20px;
-    }
-
-    .contact-label {
-        font-size: 11px;
-    }
-
-    .contact-name {
-        font-size: 15px;
-    }
-
-    .contact-card a {
-        font-size: 14px;
+        padding: 20px 22px;
     }
 }
