@@ -244,7 +244,7 @@ const MeetTheTeam = () => {
     <>
       <div className="our-mission-container">
         <div className="mission-text">
-          <h1>Our Mission</h1>
+          <h2>Our Mission</h2>
           <p>
             At UCI CubeSat, we are developing, testing, and launching Ant01, a
             2U CubeSat, into Low Earth Orbit (LEO) to conduct groundbreaking
@@ -282,7 +282,7 @@ const MeetTheTeam = () => {
             <div className="team-member" key={index}>
               <div className="member-photo">
                 {member.image ? (
-                  <img src={member.image} alt={member.name} />
+                  <img src={member.image} alt={member.name} width={120} height={120} loading="lazy" />
                 ) : (
                   <div className="initials-placeholder">
                     {member.name.split(' ').map(n => n[0]).join('')}

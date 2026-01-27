@@ -16,7 +16,7 @@
     line-height: 1.7;
 }
 
-.mission-text h1 {
+.mission-text h2 {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 40px;
     font-weight: 600;
@@ -26,7 +26,7 @@
     align-items: center;
 }
 
-.mission-text h1::after {
+.mission-text h2::after {
     content: "";
     flex-grow: 1;
     height: 1px;
@@ -164,11 +164,11 @@
         width: 100%;
     }
 
-    .mission-text h1 {
+    .mission-text h2 {
         font-size: 30px;
     }
 
-    .mission-text h1::after {
+    .mission-text h2::after {
         display: none;
     }
 
