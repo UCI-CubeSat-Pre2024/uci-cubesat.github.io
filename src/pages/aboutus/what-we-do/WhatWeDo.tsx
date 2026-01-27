@@ -1,5 +1,3 @@
-import './WhatWeDo.css';
-
 const WhatWeDo = () => {
   const sections = [
     {
@@ -29,28 +27,29 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <div className="wwd-container">
-      <header className="wwd-header">
-        <h1>What We Do</h1>
-        <p>Our satellite is built across four core engineering subsystems.</p>
+    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto py-20 px-6 gap-[72px] max-sm:py-12 max-sm:px-5 max-sm:gap-12">
+      <header className="text-center">
+        <h1 className="font-bold text-[48px] text-primary m-0 mb-3 max-sm:text-[32px]">What We Do</h1>
+        <p className="text-base text-muted m-0">Our satellite is built across four core engineering subsystems.</p>
       </header>
       {sections.map((section, index) => (
         <section
           key={index}
-          className={`wwd-section ${index % 2 === 1 ? "wwd-reverse" : ""}`}
+          className={`flex items-center gap-12 w-full max-sm:flex-col max-sm:gap-6 ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}
         >
-          <div className="wwd-image">
+          <div className="flex-[0_0_45%] max-sm:flex-none max-sm:w-full">
             <img
               src={section.image}
               alt={`${section.title} subsystem`}
               width={480}
               height={360}
               loading="lazy"
+              className="w-full h-auto block rounded-lg border border-starlight"
             />
           </div>
-          <div className="wwd-text">
-            <h2>{section.title}</h2>
-            <p>{section.description}</p>
+          <div className="flex-1">
+            <h2 className="font-semibold text-[28px] text-primary m-0 mb-4 max-sm:text-2xl">{section.title}</h2>
+            <p className="text-[15px] leading-[1.7] text-muted m-0 max-sm:text-sm">{section.description}</p>
           </div>
         </section>
       ))}

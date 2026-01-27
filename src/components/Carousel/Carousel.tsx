@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import "./Carousel.css"
 
 const ImageCarousel = () => {
   const images = [
@@ -19,18 +18,18 @@ const ImageCarousel = () => {
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
         setFade(true);
-      }, 1000); 
+      }, 1000);
     }, 20000);
 
     return () => clearInterval(interval);
   }, [images.length]);
 
   return (
-    <div className="image-carousel">
+    <div className="w-[500px] h-[300px] flex justify-center items-center overflow-hidden">
       <img
         src={images[currentIndex]}
         alt="carousel"
-        className={`carousel-image ${fade ? 'fade-in' : 'fade-out'}`}
+        className={`max-w-[500px] max-h-full object-cover transition-opacity duration-1000 ease-in-out ${fade ? 'opacity-100' : 'opacity-0'}`}
       />
     </div>
   );

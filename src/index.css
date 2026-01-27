@@ -9,84 +9,24 @@
     font-family: 'Inter', system-ui, sans-serif;
     color-scheme: dark;
   }
-}
 
-:root {
-  --bg-deep-space: #070A0F;
-  --bg-orbital: #0C111A;
-  --text-primary: #F5F7FA;
-  --text-muted: #B8C0CC;
-  --accent-earth: #2F80ED;
-  --accent-atmosphere: #56CCF2;
-  --border-starlight: #1B2230;
-  --text-dust: #8892A6;
-
-  font-family: 'Inter', system-ui, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-  color-scheme: dark;
-  color: var(--text-primary);
-  background-color: var(--bg-deep-space);
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-html, body {
-  margin: 0;
-  overflow-x: hidden;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
-h1 {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-h2 {
-  font-family: 'Inter', system-ui, sans-serif;
-  font-size: 2.4em;
-  line-height: 1.2;
-}
-
-h3 {
-  font-family: 'Inter', system-ui, sans-serif;
-}
-
-button:hover {
-  cursor: pointer;
-}
-
-a:hover {
-  cursor: pointer;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-a[href^="mailto:"] {
-  color: var(--accent-earth);
-}
-
-*:focus-visible {
-  outline: 2px solid var(--accent-earth);
-  outline-offset: 2px;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
+  body {
+    @apply m-0 overflow-x-hidden min-w-[320px] min-h-screen bg-deep-space text-primary antialiased;
+    line-height: 1.5;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  a {
+    @apply text-inherit no-underline;
+  }
+
+  a[href^="mailto:"] {
+    @apply text-earth;
+  }
+
+  *:focus-visible {
+    @apply outline-2 outline-earth outline-offset-2;
   }
 }
 
@@ -116,4 +56,3 @@ a[href^="mailto:"] {
     transform: none;
   }
 }
-

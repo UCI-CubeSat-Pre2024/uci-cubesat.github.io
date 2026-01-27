@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import { TeamMakeup } from '../../../components/TeamMakeup/TeamMakeup';
-import './MeetTheTeam.css';
 
 const MeetTheTeam = () => {
   const [activeRole, setActiveRole] = useState("All");
-  
+
   const teamMembers = [
     {
       name: "Sonia Cruze",
@@ -236,38 +235,18 @@ const MeetTheTeam = () => {
     },
   ];
 
-  const filteredMembers = activeRole === "All" 
-    ? teamMembers 
+  const filteredMembers = activeRole === "All"
+    ? teamMembers
     : teamMembers.filter(member => member.role === activeRole);
 
   return (
     <>
-      <div className="our-mission-container">
-        <div className="mission-text">
-          <h2>Our Mission</h2>
-          <p>
-            At UCI CubeSat, we are developing, testing, and launching Ant01, a
-            2U CubeSat, into Low Earth Orbit (LEO) to conduct groundbreaking
-            research. Our mission focuses on testing the Variable Emissivity
-            Device (VED), a cutting-edge technology for cost-effective
-            spacecraft thermal regulation.
-          </p>
-          <p>
-            By evaluating Ant01's performance in orbit, we gather critical data
-            that will drive future innovations in microsatellite design and
-            performance.
-          </p>
-        </div>
-        <div className="mission-image">
-          <img src="/photos/Mission.png" alt="UCI CubeSat mission" width={480} height={480} loading="lazy" />
-        </div>
-      </div>
-      <div className="meet-the-team-container">
-        <div className="header">
-          <h1>
+      <div className="flex flex-col items-center w-full py-16 px-6">
+        <div className="text-center mb-10">
+          <h1 className="font-bold text-[48px] text-primary m-0 max-sm:text-[32px]">
             Meet Our Team.
           </h1>
-          <p>
+          <p className="text-base text-muted mt-2.5">
             A driven set of undergraduates backed by industry leaders such as
             Northrop Grumman and General Atomics.
           </p>
@@ -277,22 +256,22 @@ const MeetTheTeam = () => {
           activeRole={activeRole}
           onRoleChange={setActiveRole}
         />
-        <div className="team-grid">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8 w-full max-w-[1200px] max-sm:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] max-sm:gap-6">
           {filteredMembers.map((member, index) => (
-            <div className="team-member" key={index}>
-              <div className="member-photo">
+            <div className="flex flex-col items-center text-center" key={index}>
+              <div className="w-[120px] h-[120px] bg-orbital rounded-full flex justify-center items-center mb-4 overflow-hidden border-2 border-starlight">
                 {member.image ? (
-                  <img src={member.image} alt={member.name} width={120} height={120} loading="lazy" />
+                  <img src={member.image} alt={member.name} width={120} height={120} loading="lazy" className="w-full h-full object-cover" />
                 ) : (
-                  <div className="initials-placeholder">
+                  <div className="text-[28px] font-medium text-earth tracking-[2px]">
                     {member.name.split(' ').map(n => n[0]).join('')}
                   </div>
                 )}
               </div>
-              <div className="member-info">
-                <h3>{member.role}</h3>
-                <p className="position">{member.position}</p>
-                <span className="member-name">{member.name}</span>
+              <div className="text-sm">
+                <h3 className="my-1 text-sm font-medium text-muted">{member.role}</h3>
+                <p className="text-earth my-1 text-[13px] font-medium">{member.position}</p>
+                <span className="text-primary font-medium block my-1">{member.name}</span>
               </div>
             </div>
           ))}
@@ -302,4 +281,4 @@ const MeetTheTeam = () => {
   );
 };
 
-export default MeetTheTeam; 
+export default MeetTheTeam;

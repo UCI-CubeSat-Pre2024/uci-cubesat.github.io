@@ -1,7 +1,6 @@
 import { useMemo } from 'react';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { CircularProgress } from './CircularProgress';
-import './TeamMakeup.css';
 
 interface TeamMember {
   name: string;
@@ -48,19 +47,19 @@ export function TeamMakeup({ teamMembers, activeRole, onRoleChange }: TeamMakeup
   return (
     <div
       ref={ref}
-      className={`team-makeup-container ${isVisible ? 'visible' : ''}`}
+      className={`w-full max-w-[1200px] mx-auto mb-[50px] px-6 transition-all duration-[600ms] ease-out max-sm:mb-10 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
     >
-      <div className="team-makeup-header">
-        <h2 className="team-makeup-title">Team Composition</h2>
+      <div className="flex justify-between items-center mb-[35px] max-sm:flex-col max-sm:gap-[15px] max-sm:mb-[25px]">
+        <h2 className="text-2xl font-semibold m-0 text-primary max-sm:text-xl">Team Composition</h2>
         <button
           type="button"
-          className={`view-all-btn ${activeRole === 'All' ? 'active' : ''}`}
+          className={`text-sm font-medium bg-transparent border-none py-2 px-5 rounded-[20px] cursor-pointer transition-colors ${activeRole === 'All' ? 'text-earth' : 'text-dust hover:text-primary'}`}
           onClick={() => onRoleChange('All')}
         >
           View All
         </button>
       </div>
-      <div className="team-makeup-grid">
+      <div className="flex justify-between gap-[15px] max-nav:flex-wrap max-nav:justify-center max-sm:gap-2.5 max-xs:grid max-xs:grid-cols-3 max-xs:gap-2">
         {teamStats.map((stat, index) => (
           <CircularProgress
             key={stat.role}

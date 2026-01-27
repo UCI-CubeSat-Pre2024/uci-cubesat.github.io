@@ -5,11 +5,12 @@ interface CountUpProps {
   duration?: number;
   prefix?: string;
   suffix?: string;
+  className?: string;
 }
 
-export function CountUp({ end, duration = 4, prefix = '', suffix = '' }: CountUpProps) {
+export function CountUp({ end, duration = 4, prefix = '', suffix = '', className }: CountUpProps) {
   return (
-    <span className="countup-value">
+    <span className={className}>
       <ReactCountUp
         end={end}
         duration={duration}
@@ -21,4 +22,3 @@ export function CountUp({ end, duration = 4, prefix = '', suffix = '' }: CountUp
     </span>
   );
 }
-

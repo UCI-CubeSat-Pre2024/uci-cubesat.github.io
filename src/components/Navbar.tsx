@@ -3,8 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoCloseCircleSharp } from "react-icons/io5";
 
-import "./NavbarStyle.css";
-
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
@@ -22,44 +20,56 @@ const Navbar = () => {
 
     return (
         <>
-            <a href="#main-content" className="skip-link">Skip to content</a>
-            <nav className="navbar">
-                <div className="navbar-inner">
-                    <Link to="/home" className="nav-logo">
+            <a
+                href="#main-content"
+                className="absolute -top-full left-4 z-[10000] py-2 px-4 bg-earth text-white rounded text-sm font-medium focus:top-2"
+            >
+                Skip to content
+            </a>
+            <nav className="sticky top-0 z-[1000] bg-orbital/85 backdrop-blur-[12px] border-b border-starlight">
+                <div className="flex items-center justify-between max-w-[1200px] mx-auto px-6 h-[72px]">
+                    <Link to="/home" className="flex items-center">
                         <img
                             src="/images/CubeSat_logo.png"
                             alt="UCI CubeSat logo"
                             width={40}
                             height={40}
+                            className="block"
                         />
                     </Link>
 
-                    <div className="nav-links">
-                        <Link to="/home" className={`nav-link ${isActive('/home') ? 'active' : ''}`}>
+                    <div className="hidden sm:flex items-center gap-2">
+                        <Link
+                            to="/home"
+                            className={`text-[15px] font-medium py-2 px-4 rounded-md transition-colors ${isActive('/home') ? 'text-primary' : 'text-muted hover:text-primary'}`}
+                        >
                             Home
                         </Link>
 
-                        <div className="dropdown">
-                            <Link to="/aboutus/what-we-do" className={`nav-link ${isActive('/aboutus') ? 'active' : ''}`}>
+                        <div className="relative group">
+                            <Link
+                                to="/aboutus/what-we-do"
+                                className={`text-[15px] font-medium py-2 px-4 rounded-md transition-colors ${isActive('/aboutus') ? 'text-primary' : 'text-muted hover:text-primary'}`}
+                            >
                                 About Us
                             </Link>
-                            <div className="dropdown-content">
-                                <Link to="/aboutus/what-we-do" className="dropdown-item">
+                            <div className="absolute top-full left-1/2 -translate-x-1/2 translate-y-1 opacity-0 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto group-hover:translate-y-0 transition-all duration-200 bg-orbital border border-starlight rounded-lg min-w-[180px] py-1 shadow-[0_8px_32px_rgba(0,0,0,0.4)] before:content-[''] before:absolute before:-top-3 before:left-0 before:right-0 before:h-3">
+                                <Link to="/aboutus/what-we-do" className="block py-2.5 px-4 text-sm font-medium text-muted transition-colors hover:text-primary hover:bg-white/[0.04]">
                                     What We Do
                                 </Link>
-                                <Link to="/aboutus/meet-the-team" className="dropdown-item">
+                                <Link to="/aboutus/meet-the-team" className="block py-2.5 px-4 text-sm font-medium text-muted transition-colors hover:text-primary hover:bg-white/[0.04]">
                                     Meet the Team
                                 </Link>
                             </div>
                         </div>
 
-                        <Link to="/contact" className="nav-cta">
+                        <Link to="/contact" className="text-sm font-medium text-white bg-earth py-2 px-5 rounded-md ml-2 transition-colors hover:bg-[#2570d4]">
                             Contact Us
                         </Link>
                     </div>
 
                     <button
-                        className="hamburger-btn"
+                        className="flex sm:hidden items-center bg-transparent border-none text-muted text-[22px] p-2 hover:text-primary"
                         onClick={toggleMobileMenu}
                         aria-label="Open navigation menu"
                     >
@@ -69,19 +79,19 @@ const Navbar = () => {
             </nav>
 
             {isMobileMenuOpen && (
-                <div className="mobile-overlay">
+                <div className="fixed inset-0 z-[9999] bg-orbital flex flex-col">
                     <button
-                        className="mobile-close"
+                        className="self-end bg-transparent border-none text-muted text-[40px] py-4 px-5 hover:text-primary"
                         onClick={toggleMobileMenu}
                         aria-label="Close navigation menu"
                     >
                         <IoCloseCircleSharp />
                     </button>
-                    <div className="mobile-links">
-                        <Link onClick={toggleMobileMenu} to="/home" className="mobile-link">Home</Link>
-                        <Link onClick={toggleMobileMenu} to="/aboutus/what-we-do" className="mobile-link">What We Do</Link>
-                        <Link onClick={toggleMobileMenu} to="/aboutus/meet-the-team" className="mobile-link">Meet the Team</Link>
-                        <Link onClick={toggleMobileMenu} to="/contact" className="mobile-link">Contact</Link>
+                    <div className="flex flex-col py-4 px-6 gap-1">
+                        <Link onClick={toggleMobileMenu} to="/home" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Home</Link>
+                        <Link onClick={toggleMobileMenu} to="/aboutus/what-we-do" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">What We Do</Link>
+                        <Link onClick={toggleMobileMenu} to="/aboutus/meet-the-team" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Meet the Team</Link>
+                        <Link onClick={toggleMobileMenu} to="/contact" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Contact</Link>
                     </div>
                 </div>
             )}
