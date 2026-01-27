@@ -9,7 +9,7 @@ interface CountUpProps {
 
 export function CountUp({ end, duration = 4, prefix = '', suffix = '' }: CountUpProps) {
   return (
-    <h1>
+    <span className="countup-value">
       <ReactCountUp
         end={end}
         duration={duration}
@@ -18,7 +18,7 @@ export function CountUp({ end, duration = 4, prefix = '', suffix = '' }: CountUp
         enableScrollSpy
         scrollSpyOnce
       />
-    </h1>
+    </span>
   );
 }
 
