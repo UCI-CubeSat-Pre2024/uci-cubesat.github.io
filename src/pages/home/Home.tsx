@@ -21,8 +21,8 @@ export default function Home() {
                     className="absolute inset-0 w-full h-full object-cover object-bottom"
                     aria-hidden="true"
                 >
-                    <source src="/videos/earth-orbit.webm" type="video/webm" />
                     <source src="/videos/earth-orbit.mp4" type="video/mp4" />
+                    <source src="/videos/earth-orbit.webm" type="video/webm" />
                 </video>
                 <div
                     className="absolute inset-0 z-[1]"
