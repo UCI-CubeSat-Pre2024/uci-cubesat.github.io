@@ -3,20 +3,14 @@ import { Link, useLocation } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import { IoCloseCircleSharp } from "react-icons/io5";
 
-
 import "./NavbarStyle.css";
 
 const Navbar = () => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const location = useLocation();
 
     const toggleMobileMenu = () => {
         setIsMobileMenuOpen(!isMobileMenuOpen);
-      };
-
-    const toggleDropdown = () => {
-        setIsDropdownOpen(!isDropdownOpen);
     };
 
     const isActive = (path: string) => {
@@ -28,72 +22,69 @@ const Navbar = () => {
 
     return (
         <>
-            <div className="navbar">
-                <div id="cubesat-logo">
-                    <Link to="/home">
+            <a href="#main-content" className="skip-link">Skip to content</a>
+            <nav className="navbar">
+                <div className="navbar-inner">
+                    <Link to="/home" className="nav-logo">
                         <img
                             src="/images/CubeSat_logo.png"
                             alt="UCI CubeSat logo"
-                            width={120}
-                            height={120}
+                            width={40}
+                            height={40}
                         />
                     </Link>
-                </div>
 
-                {/* Desktop NavBar */}
-                <div className="btnbox">
-                    <Link to="/home">
-                        <button className={`navbtn ${isActive('/home') ? 'active' : ''}`}>Home</button>
-                    </Link>
+                    <div className="nav-links">
+                        <Link to="/home" className={`nav-link ${isActive('/home') ? 'active' : ''}`}>
+                            Home
+                        </Link>
 
-                    <div
-                        className="dropdown"
-                        onMouseEnter={() => setIsDropdownOpen(true)}
-                        onMouseLeave={() => setIsDropdownOpen(false)}
-                    >
-                        <button className={`navbtn ${isActive('/aboutus') ? 'active' : ''}`} onClick={toggleDropdown}>About Us</button>
-                        {isDropdownOpen && (
+                        <div className="dropdown">
+                            <Link to="/aboutus/what-we-do" className={`nav-link ${isActive('/aboutus') ? 'active' : ''}`}>
+                                About Us
+                            </Link>
                             <div className="dropdown-content">
-                                <Link to="/aboutus/what-we-do" className="dropdown-item" onClick={() => setIsDropdownOpen(false)}>
+                                <Link to="/aboutus/what-we-do" className="dropdown-item">
                                     What We Do
                                 </Link>
-                                <Link to="/aboutus/meet-the-team" className="dropdown-item" onClick={() => setIsDropdownOpen(false)}>
+                                <Link to="/aboutus/meet-the-team" className="dropdown-item">
                                     Meet the Team
                                 </Link>
                             </div>
-                        )}
-                    </div>
-
-                    <Link to="/contact">
-                        <button className={`navbtn ${isActive('/contact') ? 'active' : ''}`}>Contact</button>
-                    </Link>
-                </div>
-            </div>
-            <div className="mobile-navbar">
-                <div className="navbar-header">
-                    <Link to="/home">
-                        <img
-                            src="/images/CubeSat_logo.png"
-                            alt="UCI CubeSat logo"
-                            width={70}
-                            height={70}
-                        />
-                    </Link>
-                    <button className="hamburger-menu" onClick={toggleMobileMenu}><FaBars /></button>
-                </div>
-
-                {isMobileMenuOpen && (
-                    <div className={"mobile-menu"}>
-                        <button onClick={toggleMobileMenu}><IoCloseCircleSharp /></button>
-                        <div className="btn-box">
-                            <Link  onClick={toggleMobileMenu} to="/home" className="mobile-item">HOME</Link>
-                            <Link onClick={toggleMobileMenu} to="/aboutus/what-we-do" className="mobile-item">ABOUT</Link>
-                            <Link onClick={toggleMobileMenu} to="/aboutus/meet-the-team" className="long-mobile-item">MEET THE TEAM</Link>
-                            <Link onClick={toggleMobileMenu} to="/contact" className="mobile-item">CONTACT</Link>
                         </div>
+
+                        <Link to="/contact" className="nav-cta">
+                            Contact Us
+                        </Link>
                     </div>
-                )}
-            </div>
+
+                    <button
+                        className="hamburger-btn"
+                        onClick={toggleMobileMenu}
+                        aria-label="Open navigation menu"
+                    >
+                        <FaBars />
+                    </button>
+                </div>
+            </nav>
+
+            {isMobileMenuOpen && (
+                <div className="mobile-overlay">
+                    <button
+                        className="mobile-close"
+                        onClick={toggleMobileMenu}
+                        aria-label="Close navigation menu"
+                    >
+                        <IoCloseCircleSharp />
+                    </button>
+                    <div className="mobile-links">
+                        <Link onClick={toggleMobileMenu} to="/home" className="mobile-link">Home</Link>
+                        <Link onClick={toggleMobileMenu} to="/aboutus/what-we-do" className="mobile-link">What We Do</Link>
+                        <Link onClick={toggleMobileMenu} to="/aboutus/meet-the-team" className="mobile-link">Meet the Team</Link>
+                        <Link onClick={toggleMobileMenu} to="/contact" className="mobile-link">Contact</Link>
+                    </div>
+                </div>
+            )}
         </>
     );
 };
