@@ -12,13 +12,13 @@ const WhatWeDo = () => {
       title: "Communications",
       description:
         "Handles communication between the satellite and ground stations. Ensures stable data transmission and real-time command execution for the satellite.",
-      image: "/photos/Comms.png", 
+      image: "/photos/Comms.png",
     },
     {
       title: "Structures",
       description:
         "Provides the physical framework of the satellite, ensuring strength and durability while minimizing weight to meet launch constraints.",
-      image: "/photos/Structures.png", 
+      image: "/photos/Structures.png",
     },
     {
       title: "Power",
@@ -29,28 +29,33 @@ const WhatWeDo = () => {
   ];
 
   return (
-    <div className="what-we-do-container">
+    <div className="wwd-container">
+      <header className="wwd-header">
+        <h1>What We Do</h1>
+        <p>Our satellite is built across four core engineering subsystems.</p>
+      </header>
       {sections.map((section, index) => (
-        <div
+        <section
           key={index}
-          className={`section ${index % 2 === 1 ? "reverse" : ""}`}
+          className={`wwd-section ${index % 2 === 1 ? "wwd-reverse" : ""}`}
         >
-          <div className="image-box">
+          <div className="wwd-image">
             <img
-              src={section.image || "/placeholder.png"}
-              alt={`${section.title} image`}
-              width={400}
-              height={300}
+              src={section.image}
+              alt={`${section.title} subsystem`}
+              width={480}
+              height={360}
+              loading="lazy"
             />
           </div>
-          <div className="text-box">
+          <div className="wwd-text">
             <h2>{section.title}</h2>
             <p>{section.description}</p>
           </div>
-        </div>
+        </section>
       ))}
     </div>
   );
 };
 
-export default WhatWeDo; 
+export default WhatWeDo;
