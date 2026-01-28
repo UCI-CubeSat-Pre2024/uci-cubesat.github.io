@@ -51,8 +51,60 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-on-scroll {
+  .animate-on-scroll,
+  .sat-entrance {
     opacity: 1;
     transform: none;
+    animation: none;
+  }
+
+  .marquee-track {
+    animation: none !important;
+  }
+}
+
+@layer utilities {
+  .section-glow-atmosphere::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: radial-gradient(ellipse at center, rgba(86, 204, 242, 0.08), transparent 70%);
+    box-shadow: 0 0 80px 40px rgba(86, 204, 242, 0.08);
+    pointer-events: none;
+  }
+
+  .section-glow-earth::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: radial-gradient(ellipse at center, rgba(47, 128, 237, 0.12), transparent 70%);
+    box-shadow: 0 0 80px 40px rgba(47, 128, 237, 0.12);
+    pointer-events: none;
+  }
+
+  .sat-entrance {
+    opacity: 0;
+    transform: translateY(-120px);
+  }
+
+  .sat-entrance.visible {
+    animation: sat-drop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .sat-entrance.visible.floating {
+    animation: sat-drop 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+               sat-float 6s ease-in-out 1.2s infinite;
+  }
+
+  .marquee-track:hover {
+    animation-play-state: paused;
   }
 }

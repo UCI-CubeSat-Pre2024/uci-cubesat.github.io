@@ -6,6 +6,7 @@ export default function Home() {
     const statsAnimation = useScrollAnimation<HTMLElement>();
     const aboutAnimation = useScrollAnimation<HTMLElement>();
     const missionAnimation = useScrollAnimation<HTMLElement>();
+    const satAnimation = useScrollAnimation<HTMLDivElement>();
     const sponsorsAnimation = useScrollAnimation<HTMLElement>();
     const joinAnimation = useScrollAnimation<HTMLElement>();
 
@@ -27,7 +28,7 @@ export default function Home() {
                 <div
                     className="absolute inset-0 z-[1]"
                     style={{
-                        background: 'linear-gradient(to bottom, #070A0F 0%, rgba(7,10,15,0.85) 35%, rgba(7,10,15,0.4) 65%, rgba(7,10,15,0.1) 100%)',
+                        background: 'linear-gradient(to bottom, #070A0F 0%, rgba(7,10,15,0.85) 35%, rgba(7,10,15,0.4) 65%, rgba(7,10,15,0.7) 85%, #070A0F 100%)',
                     }}
                 />
                 <div className="relative z-[2] text-center max-w-[640px] px-6 -mt-[10vh]">
@@ -49,7 +50,7 @@ export default function Home() {
 
             <section
                 ref={statsAnimation.ref}
-                className={`flex items-center justify-center gap-16 py-16 px-6 bg-orbital border-t border-b border-starlight shadow-[0_-12px_32px_rgba(0,0,0,0.45)] max-sm:gap-10 max-sm:py-12 animate-on-scroll ${statsAnimation.isVisible ? 'visible' : ''}`}
+                className={`relative z-[3] -mt-24 flex items-center justify-center gap-16 py-16 px-6 max-sm:gap-10 max-sm:py-12 animate-on-scroll ${statsAnimation.isVisible ? 'visible' : ''}`}
             >
                 <div className="flex flex-col items-center gap-1">
                     <CountUp end={10} suffix="+" duration={4} className="text-[48px] font-semibold text-primary leading-none max-sm:text-[36px]" />
@@ -64,7 +65,7 @@ export default function Home() {
 
             <section
                 ref={missionAnimation.ref}
-                className={`flex items-center justify-center gap-16 py-24 px-10 bg-orbital border-t border-starlight max-w-[1200px] mx-auto max-sm:flex-col-reverse max-sm:py-16 max-sm:px-6 max-sm:gap-10 animate-on-scroll ${missionAnimation.isVisible ? 'visible' : ''}`}
+                className={`relative section-glow-atmosphere flex items-center justify-center gap-16 py-24 px-10 max-w-[1200px] mx-auto max-sm:flex-col-reverse max-sm:py-16 max-sm:px-6 max-sm:gap-10 animate-on-scroll ${missionAnimation.isVisible ? 'visible' : ''}`}
             >
                 <div className="max-w-[460px]">
                     <p className="text-xs font-medium tracking-[0.15em] uppercase text-earth mb-4">Our Mission</p>
@@ -85,30 +86,37 @@ export default function Home() {
                         Explore Subsystems →
                     </Link>
                 </div>
-                <div className="shrink-0">
-                    <img
-                        src="/renders/antsat01.png"
-                        alt="AntSat 01 satellite render"
-                        width={400}
-                        height={400}
-                        loading="lazy"
-                        className="block max-w-[360px] h-auto animate-sat-float motion-reduce:animate-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)] max-sm:max-w-[240px]"
-                    />
+                <div className="shrink-0 relative">
+                    <div className="absolute inset-0 rounded-full bg-atmosphere/5 blur-3xl scale-110 pointer-events-none" />
+                    <div
+                        ref={satAnimation.ref}
+                        className={`sat-entrance ${satAnimation.isVisible ? 'visible floating' : ''}`}
+                    >
+                        <img
+                            src="/renders/antsat01.png"
+                            alt="AntSat 01 satellite render"
+                            width={420}
+                            height={420}
+                            loading="lazy"
+                            className="block max-w-[420px] h-auto drop-shadow-[0_20px_40px_rgba(0,0,0,0.4)] max-sm:max-w-[240px]"
+                        />
+                    </div>
                 </div>
             </section>
 
             <section
                 ref={aboutAnimation.ref}
-                className={`flex items-center justify-center gap-[60px] py-24 px-10 bg-deep-space max-w-[1200px] mx-auto max-sm:flex-col max-sm:py-16 max-sm:px-6 max-sm:gap-8 animate-on-scroll ${aboutAnimation.isVisible ? 'visible' : ''}`}
+                className={`relative section-glow-earth flex items-center justify-center gap-[60px] py-24 px-10 max-w-[1200px] mx-auto max-sm:flex-col max-sm:py-16 max-sm:px-6 max-sm:gap-8 animate-on-scroll ${aboutAnimation.isVisible ? 'visible' : ''}`}
             >
-                <div className="shrink-0">
+                <div className="shrink-0 relative">
+                    <div className="absolute -inset-2 rounded-lg bg-gradient-to-br from-earth/10 to-atmosphere/5 blur-xl pointer-events-none" />
                     <img
                         src="/photos/Home_Page.png"
                         alt="UCI CubeSat team working on satellite"
                         width={400}
                         height={300}
                         loading="lazy"
-                        className="rounded-lg block max-w-full h-auto max-sm:w-full"
+                        className="relative rounded-lg block max-w-full h-auto max-sm:w-full"
                     />
                 </div>
                 <div className="max-w-[500px]">
@@ -136,69 +144,41 @@ export default function Home() {
 
             <section
                 ref={sponsorsAnimation.ref}
-                className={`py-20 px-6 bg-deep-space border-t border-starlight animate-on-scroll ${sponsorsAnimation.isVisible ? 'visible' : ''}`}
+                className={`py-10 px-6 animate-on-scroll ${sponsorsAnimation.isVisible ? 'visible' : ''}`}
             >
-                <h2 className="font-medium text-[32px] text-primary text-center m-0 mb-12">Our Sponsors</h2>
-                <div className="hidden sm:flex items-center justify-center gap-12 flex-wrap max-w-[1000px] mx-auto">
-                    <img
-                        src="/images/NG_logo.jpeg"
-                        alt="Northrop Grumman"
-                        width={200}
-                        height={60}
-                        loading="lazy"
-                        className="max-h-[60px] w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
-                    />
-                    <img
-                        src="/images/TO_logo.png"
-                        alt="Terran Orbital"
-                        width={235}
-                        height={60}
-                        loading="lazy"
-                        className="max-h-[60px] w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
-                    />
-                    <img
-                        src="/images/GA_logo.png"
-                        alt="General Atomics Aeronautical"
-                        width={200}
-                        height={30}
-                        loading="lazy"
-                        className="max-h-[60px] w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
-                    />
-                    <img
-                        src="/images/ANSYS_logo.png"
-                        alt="Ansys"
-                        width={165}
-                        height={42}
-                        loading="lazy"
-                        className="max-h-[60px] w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
-                    />
-                </div>
-                <div className="sm:hidden overflow-hidden mt-6" aria-hidden="true">
-                    <div className="flex items-center gap-12 w-max animate-marquee">
-                        <img src="/images/NG_logo.jpeg" alt="" width={180} height={54} className="max-h-12 w-auto object-contain grayscale brightness-[0.7]" />
-                        <img src="/images/TO_logo2.png" alt="" width={210} height={54} className="max-h-12 w-auto object-contain grayscale brightness-[0.7]" />
-                        <img src="/images/GA_logo2.png" alt="" width={140} height={21} className="max-h-12 w-auto object-contain grayscale brightness-[0.7]" />
-                        <img src="/images/ANSYS_logo2.png" alt="" width={150} height={38} className="max-h-12 w-auto object-contain grayscale brightness-[0.7]" />
-                        <img src="/images/NG_logo.jpeg" alt="" width={180} height={54} className="max-h-12 w-auto object-contain grayscale brightness-[0.7]" />
-                        <img src="/images/TO_logo2.png" alt="" width={210} height={54} className="max-h-12 w-auto object-contain grayscale brightness-[0.7]" />
-                        <img src="/images/GA_logo2.png" alt="" width={140} height={21} className="max-h-12 w-auto object-contain grayscale brightness-[0.7]" />
-                        <img src="/images/ANSYS_logo2.png" alt="" width={150} height={38} className="max-h-12 w-auto object-contain grayscale brightness-[0.7]" />
+                <p className="text-xs text-dust uppercase tracking-[0.2em] text-center m-0 mb-8">Our Sponsors</p>
+                <div className="overflow-hidden">
+                    <div className="marquee-track flex items-center gap-16 w-max animate-marquee">
+                        <img src="/images/NG_logo.jpeg" alt="Northrop Grumman" width={200} height={60} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
+                        <img src="/images/TO_logo.png" alt="Terran Orbital" width={235} height={60} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
+                        <img src="/images/GA_logo.png" alt="General Atomics Aeronautical" width={200} height={30} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
+                        <img src="/images/ANSYS_logo.png" alt="Ansys" width={165} height={42} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
+                        <img src="/images/NG_logo.jpeg" alt="" width={200} height={60} loading="lazy" aria-hidden="true" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
+                        <img src="/images/TO_logo.png" alt="" width={235} height={60} loading="lazy" aria-hidden="true" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
+                        <img src="/images/GA_logo.png" alt="" width={200} height={30} loading="lazy" aria-hidden="true" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
+                        <img src="/images/ANSYS_logo.png" alt="" width={165} height={42} loading="lazy" aria-hidden="true" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
                     </div>
                 </div>
             </section>
 
             <section
                 ref={joinAnimation.ref}
-                className={`text-center py-20 px-6 bg-deep-space border-t border-starlight animate-on-scroll ${joinAnimation.isVisible ? 'visible' : ''}`}
+                className={`relative text-center py-20 px-6 animate-on-scroll ${joinAnimation.isVisible ? 'visible' : ''}`}
             >
-                <h2 className="font-semibold text-[36px] text-primary m-0 mb-4 max-sm:text-[28px]">Join the Team</h2>
-                <p className="text-[15px] leading-[1.7] text-muted max-w-[480px] mx-auto mb-7">
-                    We're looking for undergraduate students in EECS, MAE, and related
-                    fields who want hands-on satellite engineering experience.
-                </p>
-                <Link to="/contact" className="inline-block text-primary text-sm font-medium tracking-[0.03em] py-3 px-7 border border-starlight rounded-md transition-colors hover:border-earth hover:text-atmosphere">
-                    Get in Touch →
-                </Link>
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <div className="w-[600px] h-[600px] rounded-full bg-earth/[0.04] blur-3xl" />
+                </div>
+                <div className="relative">
+                    <h2 className="font-semibold text-[48px] text-primary m-0 mb-3 max-sm:text-[32px]">Join the Team</h2>
+                    <p className="text-[15px] text-dust mb-2">Be part of something that leaves the atmosphere</p>
+                    <p className="text-[15px] leading-[1.7] text-muted max-w-[480px] mx-auto mb-7">
+                        We're looking for undergraduate students in EECS, MAE, and related
+                        fields who want hands-on satellite engineering experience.
+                    </p>
+                    <Link to="/contact" className="inline-block text-deep-space text-sm font-medium tracking-[0.03em] py-3 px-7 bg-earth rounded-md transition-all hover:shadow-[0_0_24px_rgba(47,128,237,0.4)] hover:bg-[#3D8EF0]">
+                        Get in Touch →
+                    </Link>
+                </div>
             </section>
         </>
     );

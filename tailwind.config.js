@@ -42,12 +42,17 @@ export default {
           from: { transform: 'translateX(0)' },
           to: { transform: 'translateX(-50%)' },
         },
+        'sat-drop': {
+          from: { opacity: '0', transform: 'translateY(-120px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
       },
       animation: {
         'fade-in-up': 'fade-in-up 0.5s ease forwards',
         'fade-in-up-sm': 'fade-in-up-sm 0.5s ease forwards',
         'sat-float': 'sat-float 6s ease-in-out infinite',
         'marquee': 'marquee 20s linear infinite',
+        'sat-drop': 'sat-drop 1.2s cubic-bezier(0.16,1,0.3,1) forwards',
       },
     },
   },
