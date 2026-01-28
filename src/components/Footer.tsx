@@ -27,6 +27,7 @@ const Footer = () => {
                             aria-label="UCI CubeSat on LinkedIn"
                         >
                             <FaLinkedin className="text-[22px]" />
+                            <span>UCI CubeSat</span>
                         </a>
                     </div>
                     <div className="flex flex-col items-end gap-2 max-sm:items-start">
