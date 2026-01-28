@@ -57,10 +57,6 @@
     transform: none;
     animation: none;
   }
-
-  .marquee-track {
-    animation: none !important;
-  }
 }
 
 @layer utilities {
@@ -104,9 +100,11 @@
                sat-float 6s ease-in-out 1.2s infinite;
   }
 
-  .marquee-track:hover {
-    animation-play-state: paused;
+  .animate-infinite-scroll {
+    animation: infinite-scroll 45s linear infinite;
+    will-change: transform;
   }
+
 }
 
 @keyframes sat-drop {
@@ -117,4 +115,9 @@
 @keyframes sat-float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-14px); }
+}
+
+@keyframes infinite-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
