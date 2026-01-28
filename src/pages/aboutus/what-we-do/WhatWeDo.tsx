@@ -1,4 +1,8 @@
+import { useScrollAnimation, useMultipleScrollAnimation } from '../../../hooks/useScrollAnimation';
+
 const WhatWeDo = () => {
+  const headerAnimation = useScrollAnimation<HTMLDivElement>();
+
   const sections = [
     {
       title: "Avionics",
@@ -26,25 +30,36 @@ const WhatWeDo = () => {
     },
   ];
 
+  const { setRef, visibleItems } = useMultipleScrollAnimation(sections.length);
+  const glowClasses = ['section-glow-atmosphere', 'section-glow-earth', 'section-glow-atmosphere', 'section-glow-earth'];
+
   return (
-    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto py-20 px-6 gap-[72px] max-sm:py-12 max-sm:px-5 max-sm:gap-12">
-      <header className="text-center">
+    <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-6 gap-[72px] max-sm:px-5 max-sm:gap-12">
+      <div
+        ref={headerAnimation.ref}
+        className={`pt-32 pb-4 text-center animate-on-scroll ${headerAnimation.isVisible ? 'visible' : ''}`}
+      >
+        <p className="text-xs font-medium tracking-[0.15em] uppercase text-earth mb-4 max-sm:text-[11px]">
+          Engineering Subsystems
+        </p>
         <h1 className="font-bold text-[48px] text-primary m-0 mb-3 max-sm:text-[32px]">What We Do</h1>
-        <p className="text-base text-muted m-0">Our satellite is built across four core engineering subsystems.</p>
-      </header>
+        <p className="text-[15px] text-muted m-0 max-w-[480px] mx-auto">Our satellite is built across four core engineering subsystems.</p>
+      </div>
       {sections.map((section, index) => (
         <section
           key={index}
-          className={`flex items-center gap-12 w-full max-sm:flex-col max-sm:gap-6 ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}
+          ref={setRef(index)}
+          className={`relative ${glowClasses[index]} flex items-center gap-12 w-full py-16 px-4 max-sm:flex-col max-sm:gap-6 max-sm:py-8 animate-on-scroll ${visibleItems[index] ? 'visible' : ''} ${index % 2 === 1 ? 'flex-row-reverse' : ''}`}
         >
-          <div className="flex-[0_0_45%] max-sm:flex-none max-sm:w-full">
+          <div className="flex-[0_0_45%] max-sm:flex-none max-sm:w-full relative">
+            <div className={`absolute -inset-2 rounded-lg ${index % 2 === 0 ? 'bg-gradient-to-br from-atmosphere/10 to-earth/5' : 'bg-gradient-to-br from-earth/10 to-atmosphere/5'} blur-xl pointer-events-none`} />
             <img
               src={section.image}
               alt={`${section.title} subsystem`}
               width={480}
               height={360}
               loading="lazy"
-              className="w-full h-auto block rounded-lg border border-starlight"
+              className="relative w-full h-auto block rounded-lg border border-starlight"
             />
           </div>
           <div className="flex-1">
@@ -53,6 +68,7 @@ const WhatWeDo = () => {
           </div>
         </section>
       ))}
+      <div className="pb-20" />
     </div>
   );
 };

@@ -1,8 +1,11 @@
 import { useState } from 'react';
 import { TeamMakeup } from '../../../components/TeamMakeup/TeamMakeup';
+import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const MeetTheTeam = () => {
   const [activeRole, setActiveRole] = useState("All");
+  const headerAnimation = useScrollAnimation<HTMLDivElement>();
+  const gridAnimation = useScrollAnimation<HTMLDivElement>();
 
   const teamMembers = [
     {
@@ -241,36 +244,50 @@ const MeetTheTeam = () => {
 
   return (
     <>
-      <div className="flex flex-col items-center w-full py-16 px-6">
-        <div className="text-center mb-10">
-          <h1 className="font-bold text-[48px] text-primary m-0 max-sm:text-[32px]">
+      <div className="flex flex-col items-center w-full px-6">
+        <div
+          ref={headerAnimation.ref}
+          className={`pt-32 pb-10 text-center animate-on-scroll ${headerAnimation.isVisible ? 'visible' : ''}`}
+        >
+          <p className="text-xs font-medium tracking-[0.15em] uppercase text-earth mb-4 max-sm:text-[11px]">
+            Our People
+          </p>
+          <h1 className="font-bold text-[48px] text-primary m-0 mb-3 max-sm:text-[32px]">
             Meet Our Team.
           </h1>
+          <p className="text-[15px] text-muted max-w-[480px] mx-auto">
+            An interdisciplinary group of undergraduate engineers building the future of space technology.
+          </p>
         </div>
         <TeamMakeup
           teamMembers={teamMembers}
           activeRole={activeRole}
           onRoleChange={setActiveRole}
         />
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8 w-full max-w-[1200px] max-sm:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] max-sm:gap-6">
-          {filteredMembers.map((member, index) => (
-            <div className="flex flex-col items-center text-center" key={index}>
-              <div className="w-[120px] h-[120px] bg-orbital rounded-full flex justify-center items-center mb-4 overflow-hidden border-2 border-starlight">
-                {member.image ? (
-                  <img src={member.image} alt={member.name} width={120} height={120} loading="lazy" className="w-full h-full object-cover" />
-                ) : (
-                  <div className="text-[28px] font-medium text-earth tracking-[2px]">
-                    {member.name.split(' ').map(n => n[0]).join('')}
-                  </div>
-                )}
+        <div
+          ref={gridAnimation.ref}
+          className={`relative section-glow-earth pb-16 animate-on-scroll ${gridAnimation.isVisible ? 'visible' : ''}`}
+        >
+          <div className="grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))] gap-8 w-full max-w-[1200px] max-sm:grid-cols-[repeat(auto-fit,minmax(150px,1fr))] max-sm:gap-6">
+            {filteredMembers.map((member, index) => (
+              <div className="flex flex-col items-center text-center" key={index}>
+                <div className="w-[120px] h-[120px] bg-orbital rounded-full flex justify-center items-center mb-4 overflow-hidden border-2 border-starlight">
+                  {member.image ? (
+                    <img src={member.image} alt={member.name} width={120} height={120} loading="lazy" className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="text-[28px] font-medium text-earth tracking-[2px]">
+                      {member.name.split(' ').map(n => n[0]).join('')}
+                    </div>
+                  )}
+                </div>
+                <div className="text-sm">
+                  <h3 className="my-1 text-sm font-medium text-muted">{member.role}</h3>
+                  <p className="text-earth my-1 text-[13px] font-medium">{member.position}</p>
+                  <span className="text-primary font-medium block my-1">{member.name}</span>
+                </div>
               </div>
-              <div className="text-sm">
-                <h3 className="my-1 text-sm font-medium text-muted">{member.role}</h3>
-                <p className="text-earth my-1 text-[13px] font-medium">{member.position}</p>
-                <span className="text-primary font-medium block my-1">{member.name}</span>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </>
