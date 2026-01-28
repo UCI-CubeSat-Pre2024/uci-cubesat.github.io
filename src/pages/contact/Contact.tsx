@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 
 export default function Contact() {
@@ -5,6 +6,19 @@ export default function Contact() {
     const cardsAnimation = useScrollAnimation<HTMLDivElement>();
 
     return (
+        <>
+        <Helmet>
+            <title>Contact | UCI CubeSat</title>
+            <meta name="description" content="Get in touch with UCI CubeSat. Reach out to learn more about our nanosatellite project or get involved with the team." />
+            <link rel="canonical" href="https://ucicubesat.com/contact" />
+            <meta property="og:title" content="Contact | UCI CubeSat" />
+            <meta property="og:description" content="Get in touch with UCI CubeSat. Reach out to learn more or get involved." />
+            <meta property="og:url" content="https://ucicubesat.com/contact" />
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta name="twitter:title" content="Contact | UCI CubeSat" />
+            <meta name="twitter:description" content="Get in touch with UCI CubeSat. Reach out to learn more or get involved." />
+            <meta name="twitter:image" content="https://ucicubesat.com/images/og-image.png" />
+        </Helmet>
         <div className="flex flex-col items-center w-full min-h-[60vh] px-6 max-sm:px-5">
             <div
                 ref={headerAnimation.ref}
@@ -43,5 +57,6 @@ export default function Contact() {
                 </div>
             </div>
         </div>
+        </>
     );
 }

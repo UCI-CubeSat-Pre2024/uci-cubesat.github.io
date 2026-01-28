@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { TeamMakeup } from '../../../components/TeamMakeup/TeamMakeup';
 import { useScrollAnimation } from '../../../hooks/useScrollAnimation';
 
@@ -244,6 +245,18 @@ const MeetTheTeam = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Meet the Team | UCI CubeSat</title>
+        <meta name="description" content="Meet the interdisciplinary team of undergraduate engineers at UCI CubeSat building the future of space technology." />
+        <link rel="canonical" href="https://ucicubesat.com/aboutus/meet-the-team" />
+        <meta property="og:title" content="Meet the Team | UCI CubeSat" />
+        <meta property="og:description" content="Meet the interdisciplinary team of undergraduate engineers at UCI CubeSat." />
+        <meta property="og:url" content="https://ucicubesat.com/aboutus/meet-the-team" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Meet the Team | UCI CubeSat" />
+        <meta name="twitter:description" content="Meet the interdisciplinary team of undergraduate engineers at UCI CubeSat." />
+        <meta name="twitter:image" content="https://ucicubesat.com/images/og-image.png" />
+      </Helmet>
       <div className="flex flex-col items-center w-full px-6">
         <div
           ref={headerAnimation.ref}

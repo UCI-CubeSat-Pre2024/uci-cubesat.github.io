@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation } from '../../hooks/useScrollAnimation';
 import { CountUp } from '../../components/CountUp';
 
@@ -12,6 +13,18 @@ export default function Home() {
 
     return (
         <>
+            <Helmet>
+                <title>UCI CubeSat | Pioneering Nanosatellite Technology</title>
+                <meta name="description" content="UCI CubeSat is a student-led organization at UC Irvine designing, building, and launching a 2U nanosatellite into Low Earth Orbit." />
+                <link rel="canonical" href="https://ucicubesat.com/home" />
+                <meta property="og:title" content="UCI CubeSat | Pioneering Nanosatellite Technology" />
+                <meta property="og:description" content="A student-led organization at UC Irvine designing and launching a 2U nanosatellite into Low Earth Orbit." />
+                <meta property="og:url" content="https://ucicubesat.com/home" />
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:title" content="UCI CubeSat | Pioneering Nanosatellite Technology" />
+                <meta name="twitter:description" content="A student-led organization at UC Irvine designing and launching a 2U nanosatellite into Low Earth Orbit." />
+                <meta name="twitter:image" content="https://ucicubesat.com/images/og-image.png" />
+            </Helmet>
             <section className="relative w-full h-screen overflow-hidden flex items-center justify-center">
                 <video
                     autoPlay

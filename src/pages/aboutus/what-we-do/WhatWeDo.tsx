@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useScrollAnimation, useMultipleScrollAnimation } from '../../../hooks/useScrollAnimation';
 
 const WhatWeDo = () => {
@@ -40,6 +41,19 @@ const WhatWeDo = () => {
   const glowClasses = ['section-glow-atmosphere', 'section-glow-earth', 'section-glow-atmosphere', 'section-glow-earth', 'section-glow-atmosphere'];
 
   return (
+    <>
+    <Helmet>
+      <title>What We Do | UCI CubeSat</title>
+      <meta name="description" content="Explore UCI CubeSat's five core engineering subsystems: Avionics, Communications, Structures, Power, and Systems." />
+      <link rel="canonical" href="https://ucicubesat.com/aboutus/what-we-do" />
+      <meta property="og:title" content="What We Do | UCI CubeSat" />
+      <meta property="og:description" content="Explore UCI CubeSat's five core engineering subsystems building a 2U nanosatellite." />
+      <meta property="og:url" content="https://ucicubesat.com/aboutus/what-we-do" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:title" content="What We Do | UCI CubeSat" />
+      <meta name="twitter:description" content="Explore UCI CubeSat's five core engineering subsystems building a 2U nanosatellite." />
+      <meta name="twitter:image" content="https://ucicubesat.com/images/og-image.png" />
+    </Helmet>
     <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-6 gap-[72px] max-sm:px-5 max-sm:gap-12">
       <div
         ref={headerAnimation.ref}
@@ -76,6 +90,7 @@ const WhatWeDo = () => {
       ))}
       <div className="pb-20" />
     </div>
+    </>
   );
 };
 
