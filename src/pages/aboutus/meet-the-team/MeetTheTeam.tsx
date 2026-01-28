@@ -246,10 +246,6 @@ const MeetTheTeam = () => {
           <h1 className="font-bold text-[48px] text-primary m-0 max-sm:text-[32px]">
             Meet Our Team.
           </h1>
-          <p className="text-base text-muted mt-2.5">
-            A driven set of undergraduates backed by industry leaders such as
-            Northrop Grumman and General Atomics.
-          </p>
         </div>
         <TeamMakeup
           teamMembers={teamMembers}
