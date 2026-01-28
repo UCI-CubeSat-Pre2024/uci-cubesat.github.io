@@ -100,11 +100,6 @@
                sat-float 6s ease-in-out 1.2s infinite;
   }
 
-  .animate-infinite-scroll {
-    animation: infinite-scroll 45s linear infinite;
-    will-change: transform;
-  }
-
 }
 
 @keyframes sat-drop {
@@ -117,7 +112,4 @@
   50% { transform: translateY(-14px); }
 }
 
-@keyframes infinite-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
-}
+

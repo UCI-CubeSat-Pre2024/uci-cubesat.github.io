@@ -147,21 +147,11 @@ export default function Home() {
                 className={`py-10 px-6 animate-on-scroll ${sponsorsAnimation.isVisible ? 'visible' : ''}`}
             >
                 <p className="text-xs text-dust uppercase tracking-[0.2em] text-center m-0 mb-8">Our Sponsors</p>
-                <div className="w-full overflow-hidden [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]">
-                    <div className="flex w-max animate-infinite-scroll">
-                        <ul className="flex items-center [&_li]:mx-8 [&_img]:max-w-none shrink-0">
-                            <li><img src="/images/NG_logo.jpeg" alt="Northrop Grumman" width={200} height={60} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" /></li>
-                            <li><img src="/images/TO_logo.png" alt="Terran Orbital" width={235} height={60} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" /></li>
-                            <li><img src="/images/GA_logo.png" alt="General Atomics Aeronautical" width={200} height={30} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" /></li>
-                            <li><img src="/images/ANSYS_logo.png" alt="Ansys" width={165} height={42} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" /></li>
-                        </ul>
-                        <ul className="flex items-center [&_li]:mx-8 [&_img]:max-w-none shrink-0" aria-hidden="true">
-                            <li><img src="/images/NG_logo.jpeg" alt="" width={200} height={60} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" /></li>
-                            <li><img src="/images/TO_logo.png" alt="" width={235} height={60} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" /></li>
-                            <li><img src="/images/GA_logo.png" alt="" width={200} height={30} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" /></li>
-                            <li><img src="/images/ANSYS_logo.png" alt="" width={165} height={42} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" /></li>
-                        </ul>
-                    </div>
+                <div className="flex items-center justify-center gap-12 flex-wrap max-sm:gap-8">
+                    <img src="/images/NG_logo.jpeg" alt="Northrop Grumman" width={200} height={60} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
+                    <img src="/images/TO_logo.png" alt="Terran Orbital" width={235} height={60} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
+                    <img src="/images/GA_logo.png" alt="General Atomics Aeronautical" width={200} height={30} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
+                    <img src="/images/ANSYS_logo.png" alt="Ansys" width={165} height={42} loading="lazy" className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100" />
                 </div>
             </section>
 
