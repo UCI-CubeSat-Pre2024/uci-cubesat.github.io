@@ -32,9 +32,6 @@ export default function Home() {
                     }}
                 />
                 <div className="relative z-[2] text-center max-w-[640px] px-6 -mt-[10vh]">
-                    <p className="text-xs font-medium tracking-[0.15em] uppercase text-muted mb-4 max-sm:text-[11px]">
-                        Pioneering Next-Gen Thermal Control Technology For Space Exploration
-                    </p>
                     <h1 className="font-bold text-[72px] text-primary m-0 mb-6 leading-none max-sm:text-[48px]">
                         UCI CubeSat
                     </h1>
@@ -53,12 +50,12 @@ export default function Home() {
                 className={`relative z-[3] -mt-24 flex items-center justify-center gap-16 py-16 px-6 max-sm:gap-10 max-sm:py-12 animate-on-scroll ${statsAnimation.isVisible ? 'visible' : ''}`}
             >
                 <div className="flex flex-col items-center gap-1">
-                    <CountUp end={10} suffix="+" duration={4} className="text-[48px] font-semibold text-primary leading-none max-sm:text-[36px]" />
+                    <CountUp end={10} suffix="+" duration={2} className="text-[48px] font-semibold text-primary leading-none max-sm:text-[36px]" />
                     <span className="text-sm text-muted">Years In Progress</span>
                 </div>
                 <div className="w-px h-12 bg-starlight" />
                 <div className="flex flex-col items-center gap-1">
-                    <CountUp end={200} suffix="+" duration={4} className="text-[48px] font-semibold text-primary leading-none max-sm:text-[36px]" />
+                    <CountUp end={200} suffix="+" duration={2} className="text-[48px] font-semibold text-primary leading-none max-sm:text-[36px]" />
                     <span className="text-sm text-muted">Members</span>
                 </div>
             </section>
