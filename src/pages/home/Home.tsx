@@ -18,7 +18,7 @@ export default function Home() {
                     muted
                     loop
                     playsInline
-                    poster="/images/cubesatWebsiteBG.png"
+                    poster="/images/earth-orbit-poster.jpg"
                     className="absolute inset-0 w-full h-full object-cover object-bottom"
                     aria-hidden="true"
                 >
