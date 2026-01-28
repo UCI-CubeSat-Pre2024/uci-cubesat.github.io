@@ -28,10 +28,16 @@ const WhatWeDo = () => {
         "Manages the energy systems of the satellite, including solar panels and batteries, to maintain continuous power supply for all subsystems.",
       image: "/photos/Power.png",
     },
+    {
+      title: "Systems",
+      description:
+        "Oversees the integration and design of all subsystems, ensuring each component works together as a unified satellite. Coordinates system-level testing, requirements, and documentation across the project.",
+      image: "/photos/Mission.png",
+    },
   ];
 
   const { setRef, visibleItems } = useMultipleScrollAnimation(sections.length);
-  const glowClasses = ['section-glow-atmosphere', 'section-glow-earth', 'section-glow-atmosphere', 'section-glow-earth'];
+  const glowClasses = ['section-glow-atmosphere', 'section-glow-earth', 'section-glow-atmosphere', 'section-glow-earth', 'section-glow-atmosphere'];
 
   return (
     <div className="flex flex-col items-center w-full max-w-[1200px] mx-auto px-6 gap-[72px] max-sm:px-5 max-sm:gap-12">
@@ -43,7 +49,7 @@ const WhatWeDo = () => {
           Engineering Subsystems
         </p>
         <h1 className="font-bold text-[48px] text-primary m-0 mb-3 max-sm:text-[32px]">What We Do</h1>
-        <p className="text-[15px] text-muted m-0 max-w-[480px] mx-auto">Our satellite is built across four core engineering subsystems.</p>
+        <p className="text-[15px] text-muted m-0 max-w-[480px] mx-auto">Our satellite is built across five core engineering subsystems.</p>
       </div>
       {sections.map((section, index) => (
         <section
