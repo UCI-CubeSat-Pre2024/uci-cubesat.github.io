@@ -17,7 +17,7 @@ export function CountUp({ end, duration = 4, prefix = '', suffix = '', className
   return (
     <span className={className}>
       {mounted ? (
-        <Suspense fallback={<span>{prefix}{end}{suffix}</span>}>
+        <Suspense fallback={<span>{prefix}0{suffix}</span>}>
           <ReactCountUp
             end={end}
             duration={duration}
@@ -28,7 +28,7 @@ export function CountUp({ end, duration = 4, prefix = '', suffix = '', className
           />
         </Suspense>
       ) : (
-        <span>{prefix}{end}{suffix}</span>
+        <span>{prefix}0{suffix}</span>
       )}
     </span>
   );
