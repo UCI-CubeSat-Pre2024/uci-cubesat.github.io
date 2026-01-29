@@ -45,16 +45,28 @@ export default function Home() {
                     }}
                 />
                 <div className="relative z-[2] text-center max-w-[640px] px-6 -mt-[10vh]">
-                    <h1 className="font-bold text-[72px] text-primary m-0 mb-6 leading-none max-sm:text-[48px]">
-                        UCI CubeSat
+                    <h1 className="font-bold text-[72px] text-primary m-0 mb-6 leading-[1.15] max-sm:text-[48px] overflow-hidden">
+                        {'UCI CubeSat'.split('').map((char, i) => (
+                            <span
+                                key={i}
+                                className="hero-letter"
+                                style={{ animationDelay: `${0.2 + i * 0.04}s` }}
+                                aria-hidden="true"
+                            >
+                                {char === ' ' ? '\u00A0' : char}
+                            </span>
+                        ))}
+                        <span className="sr-only">UCI CubeSat</span>
                     </h1>
-                    <p className="text-base leading-[1.7] text-muted max-w-[520px] mx-auto mb-8 max-sm:text-[15px]">
+                    <p className="hero-fade-up text-base leading-[1.7] text-muted max-w-[520px] mx-auto mb-8 max-sm:text-[15px]" style={{ animationDelay: '0.8s' }}>
                         Designing, testing, and launching a modular nanosatellite into
                         low-Earth orbit.
                     </p>
-                    <Link to="/aboutus/what-we-do" className="inline-block text-primary text-sm font-medium tracking-[0.03em] transition-colors hover:text-atmosphere">
-                        Learn More →
-                    </Link>
+                    <div className="hero-fade-up" style={{ animationDelay: '1s' }}>
+                        <Link to="/aboutus/what-we-do" className="inline-block text-deep-space text-sm font-medium tracking-[0.03em] py-3 px-7 bg-earth rounded-md transition-all hover:shadow-[0_0_24px_rgba(47,128,237,0.4)] hover:bg-[#3D8EF0]">
+                            Explore Our Mission →
+                        </Link>
+                    </div>
                 </div>
             </section>
 
