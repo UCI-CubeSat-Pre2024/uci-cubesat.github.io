@@ -41,7 +41,6 @@ export default function Home() {
   const missionAnimation = useScrollAnimation<HTMLElement>();
   const satAnimation = useScrollAnimation<HTMLDivElement>();
   const sponsorsAnimation = useScrollAnimation<HTMLElement>();
-  const joinAnimation = useScrollAnimation<HTMLElement>();
 
   return (
     <>
@@ -255,33 +254,6 @@ export default function Home() {
             loading="lazy"
             className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
           />
-        </div>
-      </section>
-
-      <section
-        ref={joinAnimation.ref}
-        className={`relative text-center py-20 px-6 animate-on-scroll ${joinAnimation.isVisible ? "visible" : ""}`}
-      >
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <div className="w-[600px] h-[600px] rounded-full bg-earth/[0.04] blur-3xl" />
-        </div>
-        <div className="relative">
-          <h2 className="font-semibold text-[48px] text-primary m-0 mb-3 max-sm:text-[32px]">
-            Join the Team
-          </h2>
-          <p className="text-[15px] text-dust mb-2">
-            Be part of something that leaves the atmosphere
-          </p>
-          <p className="text-[15px] leading-[1.7] text-muted max-w-[480px] mx-auto mb-7">
-            We're looking for undergraduate students in EECS, MAE, and related
-            fields who want hands-on satellite engineering experience.
-          </p>
-          <Link
-            to="/contact"
-            className="inline-block text-deep-space text-sm font-medium tracking-[0.03em] py-3 px-7 bg-earth rounded-md transition-all hover:shadow-[0_0_24px_rgba(47,128,237,0.4)] hover:bg-[#3D8EF0]"
-          >
-            Get in Touch →
-          </Link>
         </div>
       </section>
     </>
