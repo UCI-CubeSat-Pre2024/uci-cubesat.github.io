@@ -1,4 +1,6 @@
-import CountUp from 'react-countup';
+import { useEffect, useState, lazy, Suspense } from 'react';
+
+const CountUp = lazy(() => import('react-countup'));
 
 interface CircularProgressProps {
   percentage: number;
@@ -17,6 +19,9 @@ export function CircularProgress({
   onClick,
   delay = 0
 }: CircularProgressProps) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
   const radius = 40;
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = isVisible
@@ -61,13 +66,15 @@ export function CircularProgress({
           />
         </svg>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[17px] font-semibold text-primary max-sm:text-[15px] max-xs:text-[13px]">
-          {isVisible ? (
-            <CountUp
-              end={percentage}
-              duration={1.5}
-              delay={delay / 1000}
-              suffix="%"
-            />
+          {isVisible && mounted ? (
+            <Suspense fallback={<span>{percentage}%</span>}>
+              <CountUp
+                end={percentage}
+                duration={1.5}
+                delay={delay / 1000}
+                suffix="%"
+              />
+            </Suspense>
           ) : (
             '0%'
           )}

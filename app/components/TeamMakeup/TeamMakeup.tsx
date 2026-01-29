@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { useScrollAnimation } from '../../hooks/useScrollAnimation';
+import { useScrollAnimation } from '~/hooks/useScrollAnimation';
 import { CircularProgress } from './CircularProgress';
 
 interface TeamMember {

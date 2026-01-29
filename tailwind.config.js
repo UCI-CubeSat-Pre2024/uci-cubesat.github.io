@@ -1,8 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./app/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {
@@ -22,8 +21,6 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
-        kufam: ['Kufam', 'sans-serif'],
-        konkhmer: ['Konkhmer Sleokchher', 'sans-serif'],
       },
       keyframes: {
         'fade-in-up': {
