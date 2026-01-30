@@ -2,7 +2,7 @@
 
 The official website for UCI CubeSat, built with React, TypeScript, and Tailwind CSS.
 
-**Live Site:** [ucicubesat.space](https://ucicubesat.space)
+**Live Site:** [ucicubesat.space](https://ucicubesat.com)
 
 ## Development
 
