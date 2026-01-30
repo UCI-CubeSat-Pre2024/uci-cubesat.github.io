@@ -1,8 +1,12 @@
 # UCI CubeSat Website
 
-The official website for UCI CubeSat, built with React, TypeScript, and Tailwind CSS.
+Official website for UCI CubeSat — a student-led org at UC Irvine designing and launching a 2U nanosatellite into Low Earth Orbit.
 
-**Live Site:** [ucicubesat.space](https://ucicubesat.com)
+**Live Site:** [ucicubesat.com](https://ucicubesat.com)
+
+## Tech Stack
+
+React, TypeScript, Tailwind CSS, Vite, React Router
 
 ## Development
 
@@ -13,12 +17,10 @@ bun install
 bun dev
 ```
 
-Build for production:
-
 ```bash
 bun run build
 ```
 
 ## Deployment
 
-Automatically deployed to GitHub Pages on push to `main` via GitHub Actions.
+Deployed to GitHub Pages on push to `main` via GitHub Actions.
