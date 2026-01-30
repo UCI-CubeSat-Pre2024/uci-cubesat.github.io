@@ -13,7 +13,7 @@ export const meta: MetaFunction = () => [
   {
     tagName: "link",
     rel: "canonical",
-    href: "https://ucicubesat.com/home",
+    href: "https://ucicubesat.com/",
   },
   { property: "og:title", content: "UCI CubeSat" },
   {
@@ -21,7 +21,7 @@ export const meta: MetaFunction = () => [
     content:
       "A student-led organization at UC Irvine designing and launching a 2U nanosatellite into Low Earth Orbit.",
   },
-  { property: "og:url", content: "https://ucicubesat.com/home" },
+  { property: "og:url", content: "https://ucicubesat.com/" },
   { name: "twitter:card", content: "summary_large_image" },
   { name: "twitter:title", content: "UCI CubeSat" },
   {

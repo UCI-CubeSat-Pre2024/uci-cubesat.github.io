@@ -12,8 +12,8 @@ const Navbar = () => {
     };
 
     const isActive = (path: string) => {
-        if (path === '/home') {
-            return location.pathname === '/home' || location.pathname === '/';
+        if (path === '/') {
+            return location.pathname === '/';
         }
         return location.pathname.startsWith(path);
     };
@@ -28,7 +28,7 @@ const Navbar = () => {
             </a>
             <nav className="sticky top-0 z-[1000] bg-orbital/85 backdrop-blur-[12px] border-b border-starlight">
                 <div className="flex items-center justify-between max-w-[1200px] mx-auto px-6 h-[72px]">
-                    <Link to="/home" className="flex items-center">
+                    <Link to="/" className="flex items-center">
                         <img
                             src="/images/CubeSat_logo.png"
                             alt="UCI CubeSat logo"
@@ -40,8 +40,8 @@ const Navbar = () => {
 
                     <div className="hidden sm:flex items-center gap-2">
                         <Link
-                            to="/home"
-                            className={`text-[15px] font-medium py-2 px-4 rounded-md transition-colors ${isActive('/home') ? 'text-primary' : 'text-muted hover:text-primary'}`}
+                            to="/"
+                            className={`text-[15px] font-medium py-2 px-4 rounded-md transition-colors ${isActive('/') ? 'text-primary' : 'text-muted hover:text-primary'}`}
                         >
                             Home
                         </Link>
@@ -88,7 +88,7 @@ const Navbar = () => {
                         <IoCloseCircleSharp />
                     </button>
                     <div className="flex flex-col py-4 px-6 gap-1">
-                        <Link onClick={toggleMobileMenu} to="/home" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Home</Link>
+                        <Link onClick={toggleMobileMenu} to="/" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Home</Link>
                         <Link onClick={toggleMobileMenu} to="/aboutus/what-we-do" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">What We Do</Link>
                         <Link onClick={toggleMobileMenu} to="/aboutus/meet-the-team" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Meet the Team</Link>
                         <Link onClick={toggleMobileMenu} to="/contact" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Contact</Link>

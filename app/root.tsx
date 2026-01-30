@@ -99,7 +99,7 @@ export function ErrorBoundary({ error }: { error: unknown }) {
           {error.status === 404 ? "Page Not Found" : error.statusText}
         </p>
         <Link
-          to="/home"
+          to="/"
           className="text-sm font-medium text-earth transition-colors hover:text-atmosphere"
         >
           Back to Home →
@@ -115,7 +115,7 @@ export function ErrorBoundary({ error }: { error: unknown }) {
       </h1>
       <p className="text-lg text-muted mb-8">Something went wrong</p>
       <Link
-        to="/home"
+        to="/"
         className="text-sm font-medium text-earth transition-colors hover:text-atmosphere"
       >
         Back to Home →

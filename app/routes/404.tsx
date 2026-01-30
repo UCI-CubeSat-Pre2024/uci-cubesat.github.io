@@ -17,7 +17,7 @@ export default function NotFound() {
       </h1>
       <p className="text-lg text-muted mb-8">Page Not Found</p>
       <Link
-        to="/home"
+        to="/"
         className="text-sm font-medium text-earth transition-colors hover:text-atmosphere"
       >
         Back to Home →

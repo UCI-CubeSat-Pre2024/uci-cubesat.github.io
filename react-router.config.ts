@@ -5,8 +5,6 @@ export default {
   buildDirectory: "dist",
   prerender: [
     "/",
-    "/home",
-    "/aboutus",
     "/aboutus/what-we-do",
     "/aboutus/meet-the-team",
     "/contact",
