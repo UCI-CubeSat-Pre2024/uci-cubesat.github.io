@@ -218,25 +218,25 @@ export default function Home() {
         ref={sponsorsAnimation.ref}
         className={`py-10 px-6 animate-on-scroll ${sponsorsAnimation.isVisible ? "visible" : ""}`}
       >
-        <p className="text-xs text-dust uppercase tracking-[0.2em] text-center m-0 mb-8">
+        <p className="text-xs text-dust uppercase tracking-[0.2em] text-center m-0 mb-12">
           Our Sponsors
         </p>
-        <div className="flex items-center justify-center gap-12 flex-wrap max-sm:gap-8">
+        <div className="flex items-center justify-center gap-16 flex-wrap max-sm:gap-10">
           <img
-            src="/images/NG_logo.jpeg"
+            src="/images/NG_logo.png"
             alt="Northrop Grumman"
-            width={200}
+            width={265}
             height={60}
             loading="lazy"
-            className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
+            className="max-h-8 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
           />
           <img
             src="/images/TO_logo.png"
             alt="Terran Orbital"
-            width={235}
+            width={78}
             height={60}
             loading="lazy"
-            className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
+            className="max-h-8 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
           />
           <img
             src="/images/GA_logo.png"
@@ -244,7 +244,7 @@ export default function Home() {
             width={200}
             height={30}
             loading="lazy"
-            className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
+            className="max-h-8 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
           />
           <img
             src="/images/ANSYS_logo.png"
@@ -252,7 +252,7 @@ export default function Home() {
             width={165}
             height={42}
             loading="lazy"
-            className="max-h-10 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
+            className="max-h-8 w-auto object-contain grayscale brightness-[0.7] transition-[filter] duration-300 hover:grayscale-0 hover:brightness-100"
           />
         </div>
       </section>
