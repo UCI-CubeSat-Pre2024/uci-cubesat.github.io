@@ -77,20 +77,33 @@ export default function Contact() {
             </a>
           </div>
           <div
-            className={`flex flex-col gap-1 py-6 px-7 bg-orbital border border-starlight rounded-xl text-left transition-colors hover:border-earth/30 max-sm:py-5 max-sm:px-[22px] animate-on-scroll animate-delay-2 ${cardsAnimation.isVisible ? "visible" : ""}`}
+            className={`flex flex-col gap-4 py-6 px-7 bg-orbital border border-starlight rounded-xl text-left transition-colors hover:border-earth/30 max-sm:py-5 max-sm:px-[22px] animate-on-scroll animate-delay-2 ${cardsAnimation.isVisible ? "visible" : ""}`}
           >
             <span className="text-[11px] font-medium uppercase tracking-[1px] text-dust">
-              Advisor
+              Faculty Advisors
             </span>
-            <span className="text-base font-medium text-primary">
-              Professor David Copp
-            </span>
-            <a
-              href="mailto:dcopp@uci.edu"
-              className="text-sm font-medium text-earth mt-0.5 hover:text-atmosphere transition-colors"
-            >
-              dcopp@uci.edu
-            </a>
+            <div className="flex flex-col gap-1">
+              <span className="text-base font-medium text-primary">
+                Professor Yuri Shimane
+              </span>
+              <a
+                href="mailto:yshimane@uci.edu"
+                className="text-sm font-medium text-earth hover:text-atmosphere transition-colors"
+              >
+                yshimane@uci.edu
+              </a>
+            </div>
+            <div className="flex flex-col gap-1">
+              <span className="text-base font-medium text-primary">
+                Professor Jaeho Lee
+              </span>
+              <a
+                href="mailto:jaeholee@uci.edu"
+                className="text-sm font-medium text-earth hover:text-atmosphere transition-colors"
+              >
+                jaeholee@uci.edu
+              </a>
+            </div>
           </div>
           <div
             className={`flex flex-col gap-1 py-6 px-7 bg-orbital border border-starlight rounded-xl text-left transition-colors hover:border-earth/30 max-sm:py-5 max-sm:px-[22px] animate-on-scroll animate-delay-3 ${cardsAnimation.isVisible ? "visible" : ""}`}

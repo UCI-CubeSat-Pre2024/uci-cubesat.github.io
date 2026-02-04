@@ -130,17 +130,17 @@ export default function Home() {
             Our Mission
           </p>
           <h2 className="font-semibold text-[40px] text-primary m-0 mb-5 max-sm:text-[30px]">
-            Ant01
+            AntSat 01
           </h2>
           <p className="text-[15px] leading-[1.7] text-muted m-0 mb-4">
-            At UCI CubeSat, we are developing, testing, and launching Ant01, a
+            At UCI CubeSat, we are developing, testing, and launching AntSat 01, a
             2U CubeSat, into Low Earth Orbit (LEO) to conduct groundbreaking
             research. Our mission focuses on testing the Variable Emissivity
             Device (VED), a cutting-edge technology for cost-effective
             spacecraft thermal regulation.
           </p>
           <p className="text-[15px] leading-[1.7] text-muted m-0 mb-4">
-            By evaluating Ant01's performance in orbit, we gather critical data
+            By evaluating AntSat 01's performance in orbit, we gather critical data
             that will drive future innovations in microsatellite design and
             performance.
           </p>
@@ -191,9 +191,9 @@ export default function Home() {
           <p className="text-[15px] leading-[1.7] text-muted m-0 mb-4 max-sm:hidden">
             We are an interdisciplinary team of undergraduate students at UCI
             dedicated to building and launching a 2U nanosatellite. The
-            satellite operates with six main engineering subsystems: Avionics,
-            Communications, Structures, Power, Developer Operations, and
-            Systems, in addition to housing our research payload.
+            satellite operates with five main engineering subsystems: Avionics,
+            Communications, Structures, Power, and Systems, in addition to
+            housing our research payload.
           </p>
           <p className="text-[15px] leading-[1.7] text-muted m-0 mb-4 hidden max-sm:block">
             We are an interdisciplinary team of undergraduate students at UCI

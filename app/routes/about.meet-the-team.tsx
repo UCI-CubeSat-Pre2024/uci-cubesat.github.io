@@ -46,6 +46,18 @@ const teamMembers = [
     image: "/Headshots/SoniaCruze.webp",
   },
   {
+    name: "Yuri Shimane",
+    role: "Advisory",
+    position: "Faculty Advisor",
+    image: "",
+  },
+  {
+    name: "Jaeho Lee",
+    role: "Advisory",
+    position: "Faculty Advisor",
+    image: "",
+  },
+  {
     name: "Byren Cheema",
     role: "Advisory",
     position: "Webmaster",
