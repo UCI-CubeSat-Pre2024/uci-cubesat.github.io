@@ -210,7 +210,7 @@ export default function JoinTheTeam() {
             <SectionHeader
               eyebrow="Apply"
               title="Application Access"
-              description="A Google Form can be embedded directly on this page, but a standard application link is usually more reliable on mobile and easier to maintain. This section is ready for either approach."
+              description=""
             />
             {embeddedFormUrl ? (
               <div className="mt-8 overflow-hidden rounded-2xl border border-starlight bg-deep-space">
@@ -227,9 +227,8 @@ export default function JoinTheTeam() {
                     Recruitment Form
                   </h3>
                   <p className="text-[15px] leading-[1.7] text-muted m-0">
-                    When the form is ready, we can either embed it here or add a
-                    direct application button. Right now this page is set up for
-                    both options.
+                    When the form is ready, we will either embed it here or add a
+                    direct application button. Excited to hear from all you applicants!
                   </p>
                 </div>
                 {applicationFormUrl ? (
