@@ -7,6 +7,7 @@ export default {
     "/",
     "/aboutus/what-we-do",
     "/aboutus/meet-the-team",
+    "/join-the-team",
     "/contact",
   ],
 } satisfies Config;

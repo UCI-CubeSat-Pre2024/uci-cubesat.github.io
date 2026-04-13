@@ -38,6 +38,40 @@ export const meta: MetaFunction = () => [
   },
 ];
 
+function HeadshotAvatar({
+  name,
+  image,
+}: {
+  name: string;
+  image: string;
+}) {
+  const [hasImageError, setHasImageError] = useState(false);
+  const initials = name
+    .split(" ")
+    .map((part) => part[0])
+    .join("");
+
+  return (
+    <div className="w-[120px] h-[120px] bg-orbital rounded-full flex justify-center items-center mb-4 overflow-hidden border-2 border-starlight">
+      {image && !hasImageError ? (
+        <img
+          src={image}
+          alt={name}
+          width={120}
+          height={120}
+          loading="lazy"
+          className="w-full h-full object-cover"
+          onError={() => setHasImageError(true)}
+        />
+      ) : (
+        <div className="text-[28px] font-medium text-earth tracking-[2px]">
+          {initials}
+        </div>
+      )}
+    </div>
+  );
+}
+
 const teamMembers = [
   {
     name: "Sonia Cruze",
@@ -49,25 +83,19 @@ const teamMembers = [
     name: "Yuri Shimane",
     role: "Advisory",
     position: "Faculty Advisor",
-    image: "",
+    image: "/Headshots/YuriShimane.webp",
   },
   {
     name: "Jaeho Lee",
     role: "Advisory",
     position: "Faculty Advisor",
-    image: "",
-  },
-  {
-    name: "Byren Cheema",
-    role: "Advisory",
-    position: "Webmaster",
-    image: "",
+    image: "/Headshots/JaehoLee.webp",
   },
   {
     name: "Cosmo Daniels",
     role: "Avionics",
     position: "Hardware Lead, Software Lead",
-    image: "",
+    image: "/Headshots/CosmoDaniels.webp",
   },
   {
     name: "Enzo Li",
@@ -115,7 +143,7 @@ const teamMembers = [
     name: "Emmanuel Bivian",
     role: "Avionics",
     position: "Software",
-    image: "",
+    image: "/Headshots/EmmanuelBivian.webp",
   },
   {
     name: "Hailey Williams",
@@ -169,13 +197,7 @@ const teamMembers = [
     name: "Alejandro Gomez",
     role: "Communications",
     position: "Software",
-    image: "",
-  },
-  {
-    name: "Jenavieve Steward",
-    role: "Power",
-    position: "Subteam Lead",
-    image: "/Headshots/JenavieveSteward.webp",
+    image: "/Headshots/AlejandroGomez.webp",
   },
   {
     name: "Akam Khinda",
@@ -193,7 +215,7 @@ const teamMembers = [
     name: "Andy Li",
     role: "Power",
     position: "Hardware",
-    image: "",
+    image: "/Headshots/AndyLi.webp",
   },
   {
     name: "Alex Ikeda",
@@ -202,22 +224,10 @@ const teamMembers = [
     image: "/Headshots/AlexIkeda.webp",
   },
   {
-    name: "Sijia Zhang",
-    role: "Power",
-    position: "Engineer",
-    image: "",
-  },
-  {
-    name: "Nathan Kwock",
-    role: "Power",
-    position: "Software",
-    image: "",
-  },
-  {
     name: "Sofia Fowler",
     role: "Power",
     position: "Engineer, Software",
-    image: "",
+    image: "/Headshots/SofiaFowler.webp",
   },
   {
     name: "Gloria McMaster-Sanchez",
@@ -259,24 +269,24 @@ const teamMembers = [
     name: "Xavier Marciano",
     role: "Systems",
     position: "Subteam Lead, Integration and Design",
-    image: "",
+    image: "/Headshots/XavierMarciano.webp",
   },
   {
     name: "Briant Fernandez",
     role: "Systems",
     position: "Engineer",
-    image: "",
+    image: "/Headshots/BriantFernandez-v2.webp",
   },
   {
     name: "Katie Lien",
     role: "Systems",
     position: "Integration and Design",
-    image: "",
+    image: "/Headshots/KatieLien-v2.webp",
   },
   {
     name: "Brayden Weimholt",
     role: "Systems",
-    position: "Software",
+    position: "Software/Webmaster",
     image: "/Headshots/BraydenWeimholt.webp",
   },
 ];
@@ -323,25 +333,7 @@ export default function MeetTheTeam() {
               className="flex flex-col items-center text-center"
               key={index}
             >
-              <div className="w-[120px] h-[120px] bg-orbital rounded-full flex justify-center items-center mb-4 overflow-hidden border-2 border-starlight">
-                {member.image ? (
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    width={120}
-                    height={120}
-                    loading="lazy"
-                    className="w-full h-full object-cover"
-                  />
-                ) : (
-                  <div className="text-[28px] font-medium text-earth tracking-[2px]">
-                    {member.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </div>
-                )}
-              </div>
+              <HeadshotAvatar name={member.name} image={member.image} />
               <div className="text-sm">
                 <h3 className="my-1 text-sm font-medium text-muted">
                   {member.role}

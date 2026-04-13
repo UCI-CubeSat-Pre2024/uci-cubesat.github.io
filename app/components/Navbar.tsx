@@ -63,6 +63,13 @@ const Navbar = () => {
                             </div>
                         </div>
 
+                        <Link
+                            to="/join-the-team"
+                            className={`text-[15px] font-medium py-2 px-4 rounded-md transition-colors ${isActive('/join-the-team') ? 'text-primary' : 'text-muted hover:text-primary'}`}
+                        >
+                            Join the Team
+                        </Link>
+
                         <Link to="/contact" className="text-sm font-medium text-white bg-earth py-2 px-5 rounded-md ml-2 transition-colors hover:bg-[#2570d4]">
                             Contact Us
                         </Link>
@@ -91,6 +98,7 @@ const Navbar = () => {
                         <Link onClick={toggleMobileMenu} to="/" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Home</Link>
                         <Link onClick={toggleMobileMenu} to="/aboutus/what-we-do" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">What We Do</Link>
                         <Link onClick={toggleMobileMenu} to="/aboutus/meet-the-team" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Meet the Team</Link>
+                        <Link onClick={toggleMobileMenu} to="/join-the-team" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Join the Team</Link>
                         <Link onClick={toggleMobileMenu} to="/contact" className="text-[32px] font-bold text-muted py-3 transition-colors hover:text-primary">Contact</Link>
                     </div>
                 </div>

@@ -28,6 +28,8 @@
   }
 }
 
+
+
 @media (prefers-reduced-motion: no-preference) {
   .animate-on-scroll {
     opacity: 0;
