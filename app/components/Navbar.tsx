@@ -30,11 +30,11 @@ const Navbar = () => {
                 <div className="flex items-center justify-between max-w-[1200px] mx-auto px-6 h-[72px]">
                     <Link to="/" className="flex items-center">
                         <img
-                            src="/images/CubeSat_logo.png"
+                            src="/images/CubeSat_logo_nav.png"
                             alt="UCI CubeSat logo"
-                            width={40}
+                            width={152}
                             height={40}
-                            className="block"
+                            className="block h-10 w-auto max-w-[152px] object-contain"
                         />
                     </Link>
 

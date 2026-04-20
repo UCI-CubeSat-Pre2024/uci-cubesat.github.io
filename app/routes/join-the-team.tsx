@@ -33,8 +33,8 @@ export const meta: MetaFunction = () => [
   },
 ];
 
-const applicationFormUrl = "";
-const embeddedFormUrl = "";
+const applicationFormUrl =
+  "https://docs.google.com/forms/d/e/1FAIpQLScURogymH-xZ3b9PGoNMoP-KEpCl9bKLyNhc42XDDvZkd23pQ/viewform";
 
 const timeline = [
   {
@@ -161,8 +161,41 @@ export default function JoinTheTeam() {
         </section>
 
         <section
+          ref={applicationAnimation.ref}
+          className={`relative section-glow-earth py-12 animate-on-scroll ${applicationAnimation.isVisible ? "visible" : ""}`}
+        >
+          <div className="rounded-[28px] border border-starlight bg-[radial-gradient(circle_at_top,rgba(86,204,242,0.12),transparent_40%),linear-gradient(180deg,rgba(12,17,26,0.98),rgba(7,10,15,0.98))] p-8 max-sm:p-6">
+            <SectionHeader
+              eyebrow="Apply"
+              title="Ready to Apply?"
+              description="The application is live now. Submit to the google form linked below, and we will follow up with selected applicants for interviews!"
+            />
+            <div className="mt-8 rounded-[24px] border border-starlight bg-orbital p-6 max-sm:p-5">
+              <div className="flex flex-col gap-5 items-start">
+                <div>
+                  <h3 className="text-[26px] font-semibold text-primary m-0 mb-2 max-sm:text-[22px]">
+                    UCI CubeSat Recruitment Form
+                  </h3>
+                  <p className="text-[15px] leading-[1.7] text-muted m-0 max-w-[720px]">
+                    If you are interested in joining, apply as early as you can.
+                  </p>
+                </div>
+                <a
+                  href={applicationFormUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex min-h-[60px] items-center justify-center rounded-2xl bg-earth px-8 py-4 text-base font-semibold text-white shadow-[0_12px_30px_rgba(47,128,237,0.28)] transition-all hover:-translate-y-[1px] hover:bg-[#2570d4] hover:shadow-[0_16px_36px_rgba(47,128,237,0.34)] max-sm:w-full"
+                >
+                  Open the Application Form
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
           ref={interviewAnimation.ref}
-          className={`relative section-glow-atmosphere grid grid-cols-[1.2fr_0.8fr] gap-8 py-16 max-sm:grid-cols-1 animate-on-scroll ${interviewAnimation.isVisible ? "visible" : ""}`}
+          className={`relative section-glow-atmosphere grid grid-cols-[1.2fr_0.8fr] gap-8 py-16 pb-20 max-sm:grid-cols-1 animate-on-scroll ${interviewAnimation.isVisible ? "visible" : ""}`}
         >
           <div className="rounded-[24px] border border-starlight bg-orbital px-7 py-7">
             <SectionHeader
@@ -199,54 +232,6 @@ export default function JoinTheTeam() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
-
-        <section
-          ref={applicationAnimation.ref}
-          className={`relative section-glow-earth py-12 pb-20 animate-on-scroll ${applicationAnimation.isVisible ? "visible" : ""}`}
-        >
-          <div className="rounded-[28px] border border-starlight bg-[linear-gradient(180deg,rgba(12,17,26,0.96),rgba(7,10,15,0.96))] p-8 max-sm:p-6">
-            <SectionHeader
-              eyebrow="Apply"
-              title="Application Access"
-              description=""
-            />
-            {embeddedFormUrl ? (
-              <div className="mt-8 overflow-hidden rounded-2xl border border-starlight bg-deep-space">
-                <iframe
-                  title="UCI CubeSat recruitment form"
-                  src={embeddedFormUrl}
-                  className="w-full min-h-[980px] border-0"
-                />
-              </div>
-            ) : (
-              <div className="mt-8 grid grid-cols-[1fr_auto] gap-4 items-center rounded-2xl border border-starlight bg-orbital px-6 py-6 max-sm:grid-cols-1">
-                <div>
-                  <h3 className="text-[22px] font-semibold text-primary m-0 mb-2">
-                    Recruitment Form
-                  </h3>
-                  <p className="text-[15px] leading-[1.7] text-muted m-0">
-                    When the form is ready, we will either embed it here or add a
-                    direct application button. Excited to hear from all you applicants!
-                  </p>
-                </div>
-                {applicationFormUrl ? (
-                  <a
-                    href={applicationFormUrl}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center justify-center whitespace-nowrap rounded-xl bg-earth px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[#2570d4]"
-                  >
-                    Open Application
-                  </a>
-                ) : (
-                  <div className="inline-flex items-center justify-center whitespace-nowrap rounded-xl border border-starlight px-5 py-3 text-sm font-medium text-dust">
-                    Link Coming Soon
-                  </div>
-                )}
-              </div>
-            )}
           </div>
         </section>
       </div>
