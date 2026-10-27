@@ -17,12 +17,12 @@ interface TeamMakeupProps {
 
 const ROLE_ORDER = [
   'Executive',
-  'Advisory',
   'Avionics',
   'Communications',
   'Power',
   'Structures',
-  'Systems'
+  'Systems',
+  'Operations'
 ];
 
 export function TeamMakeup({ teamMembers, activeRole, onRoleChange }: TeamMakeupProps) {
