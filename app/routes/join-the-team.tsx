@@ -6,7 +6,7 @@ export const meta: MetaFunction = () => [
   {
     name: "description",
     content:
-      "Learn how UCI CubeSat recruitment works, what to expect during interviews, and how to apply during the spring cycle.",
+      "Apply for UCI CubeSat's Winter 2027 recruitment cycle in Avionics Software, Structures, Systems, or Operations by December 20, 2026.",
   },
   {
     tagName: "link",
@@ -17,7 +17,7 @@ export const meta: MetaFunction = () => [
   {
     property: "og:description",
     content:
-      "Explore UCI CubeSat recruiting, interviews, and application timing.",
+      "Winter 2027 applications for Avionics Software, Structures, Systems, and Operations are open through December 20, 2026.",
   },
   { property: "og:url", content: "https://ucicubesat.com/join-the-team" },
   { name: "twitter:card", content: "summary_large_image" },
@@ -25,7 +25,7 @@ export const meta: MetaFunction = () => [
   {
     name: "twitter:description",
     content:
-      "Explore UCI CubeSat recruiting, interviews, and application timing.",
+      "Winter 2027 applications for Avionics Software, Structures, Systems, and Operations are open through December 20, 2026.",
   },
   {
     name: "twitter:image",
@@ -33,33 +33,57 @@ export const meta: MetaFunction = () => [
   },
 ];
 
-const applicationFormUrl =
-  "https://docs.google.com/forms/d/e/1FAIpQLScURogymH-xZ3b9PGoNMoP-KEpCl9bKLyNhc42XDDvZkd23pQ/viewform";
+const applicationFormUrl = "https://forms.gle/TTBbzQ9cZM2Jbwhs8";
+const recruitmentPacketUrl = "/UCI-CubeSat-Winter-2027-Recruitment-Info.pdf";
+const recruitmentPacketPages = [2, 3, 4, 6];
+
+const openTeams = [
+  {
+    name: "Avionics Software",
+    description:
+      "Develop and test flight software for AntSat 01, including embedded hardware interfaces, sensors, and system validation.",
+  },
+  {
+    name: "Structures",
+    description:
+      "Design, analyze, manufacture, and assemble the satellite's physical structure.",
+  },
+  {
+    name: "Systems",
+    description:
+      "Connect the subsystems through requirements, integration and testing, budgets, and risk analysis.",
+  },
+  {
+    name: "Operations",
+    description:
+      "Support the program through sponsorships, outreach, design, recruitment materials, and internal organization.",
+  },
+];
 
 const timeline = [
   {
-    step: "Spring Recruitment Opens",
-    timing: "Monday of Week 4",
+    step: "Applications Open",
+    timing: "Now",
     description:
-      "UCI CubeSat primarily recruits in the spring as the team prepares for the next year's project cycle.",
+      "Explore the open teams and their work in the recruitment packet, then choose the area that interests you.",
   },
   {
     step: "Submit an Application",
-    timing: "Application Window",
+    timing: "Through December 20, 2026",
     description:
-      "If you're interested, submit the recruiting form and share your background, interests, and preferred technical areas.",
+      "Submit the application form by December 20 to be considered for this winter cycle.",
   },
   {
-    step: "Interview Round",
-    timing: "Weeks 5-10",
+    step: "Recruitment & Interviews",
+    timing: "Winter break",
     description:
-      "Selected applicants are invited to a one-hour interview, focusing on both behavioral and technical questions.",
+      "We will review applications and follow up with selected applicants during winter break.",
   },
   {
-    step: "Final Decisions",
-    timing: "Beginning of Summer",
+    step: "Join the Team",
+    timing: "Beginning of winter quarter",
     description:
-      "Final recruiting decisions are released at the beginning of summer so new members can prepare to onboard for next year.",
+      "We are targeting the beginning of winter quarter for new members to start.",
   },
 ];
 
@@ -113,17 +137,36 @@ export default function JoinTheTeam() {
           ref={headerAnimation.ref}
           className={`pt-32 pb-4 text-center animate-on-scroll ${headerAnimation.isVisible ? "visible" : ""}`}
         >
-          <p className="text-xs font-medium tracking-[0.15em] uppercase text-earth mb-4 max-sm:text-[11px]">
-            Recruiting
+          <p className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-earth/50 bg-earth/15 px-4 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-atmosphere">
+            <span className="h-2 w-2 rounded-full bg-atmosphere" aria-hidden="true" />
+            Recruiting Now
           </p>
-          <h1 className="font-bold text-[48px] text-primary m-0 mb-3 max-sm:text-[32px]">
-            Join the Team
+          <h1 className="mx-auto mb-4 max-w-[850px] text-[clamp(2.25rem,5vw,4rem)] font-bold leading-[1.12] text-primary">
+            Winter 2027 Applications Are Open
           </h1>
-          <p className="text-[15px] text-muted m-0 max-w-[520px] mx-auto">
-            UCI CubeSat recruits students who want to contribute to a real
-            spacecraft project, grow quickly in a technical team, and help
-            build AntSat 01 from concept through flight readiness.
+          <p className="mx-auto mb-6 max-w-[650px] text-[17px] leading-[1.6] text-muted max-sm:text-[15px]">
+            Join Avionics Software, Structures, Systems, or Operations and help
+            move AntSat 01 toward flight readiness.
           </p>
+          <p className="mb-6 text-base font-semibold text-primary">
+            Apply by December 20, 2026
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <a
+              href={applicationFormUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex min-h-[56px] items-center justify-center rounded-xl bg-earth px-8 py-3 text-base font-semibold text-white shadow-[0_12px_30px_rgba(47,128,237,0.28)] transition-colors hover:bg-[#2570d4] max-sm:w-full"
+            >
+              Apply Now →
+            </a>
+            <a
+              href="#open-teams"
+              className="inline-flex min-h-[56px] items-center justify-center rounded-xl border border-starlight px-7 py-3 text-base font-medium text-primary transition-colors hover:border-earth max-sm:w-full"
+            >
+              Explore Open Teams
+            </a>
+          </div>
         </div>
 
         <section
@@ -133,7 +176,7 @@ export default function JoinTheTeam() {
           <SectionHeader
             eyebrow="Timeline"
             title="What Recruitment Looks Like"
-            description="Our recruiting process is intentionally structured so our applicants know what to expect from the first application through final decisions."
+            description="Applications are open through December 20, 2026. We will recruit over winter break and aim for new members to start at the beginning of winter quarter."
           />
           <div className="grid grid-cols-2 gap-5 mt-10 max-sm:grid-cols-1">
             {timeline.map((item, index) => (
@@ -160,6 +203,65 @@ export default function JoinTheTeam() {
           </div>
         </section>
 
+        <section id="open-teams" className="relative section-glow-atmosphere py-12">
+          <SectionHeader
+            eyebrow="Open Teams"
+            title="Find Your Place"
+            description="This winter cycle is accepting applications for these four teams. Read the packet below for the full role descriptions and qualifications."
+          />
+          <div className="grid grid-cols-2 gap-5 mt-10 max-md:grid-cols-1">
+            {openTeams.map((team) => (
+              <div
+                key={team.name}
+                className="rounded-2xl border border-starlight bg-orbital px-6 py-6"
+              >
+                <h3 className="text-[22px] font-semibold text-primary m-0 mb-3">
+                  {team.name}
+                </h3>
+                <p className="text-[15px] leading-[1.7] text-muted m-0">
+                  {team.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="relative section-glow-earth py-12">
+          <SectionHeader
+            eyebrow="Recruitment Packet"
+            title="Explore the Roles"
+            description="Read the Winter 2027 recruitment packet for each team's responsibilities, recommended majors, and skills."
+          />
+          <div
+            className="mt-8 max-h-[720px] overflow-y-auto overscroll-contain rounded-[24px] border border-starlight bg-[#e8e9eb] p-4 max-sm:max-h-[520px] max-sm:p-2"
+            role="region"
+            aria-label="Scrollable Winter 2027 recruitment packet"
+            tabIndex={0}
+          >
+            <div className="mx-auto flex max-w-[800px] flex-col gap-4 max-sm:gap-2">
+              {recruitmentPacketPages.map((page) => (
+                <img
+                  key={page}
+                  src={`/recruitment/winter-2027/page-${page}.webp`}
+                  alt={`Winter 2027 recruitment packet, page ${page}`}
+                  className="block h-auto w-full bg-white shadow-[0_2px_12px_rgba(0,0,0,0.12)]"
+                  loading="lazy"
+                  width={1020}
+                  height={1320}
+                />
+              ))}
+            </div>
+          </div>
+          <a
+            href={recruitmentPacketUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block mt-5 text-[15px] font-medium text-earth transition-colors hover:text-atmosphere"
+          >
+            Open or download the recruitment packet →
+          </a>
+        </section>
+
         <section
           ref={applicationAnimation.ref}
           className={`relative section-glow-earth py-12 animate-on-scroll ${applicationAnimation.isVisible ? "visible" : ""}`}
@@ -168,7 +270,7 @@ export default function JoinTheTeam() {
             <SectionHeader
               eyebrow="Apply"
               title="Ready to Apply?"
-              description="The application is live now. Submit to the google form linked below, and we will follow up with selected applicants for interviews!"
+              description="Submit the Winter 2027 application by December 20, 2026. We will follow up with selected applicants during winter break."
             />
             <div className="mt-8 rounded-[24px] border border-starlight bg-orbital p-6 max-sm:p-5">
               <div className="flex flex-col gap-5 items-start">
@@ -177,7 +279,7 @@ export default function JoinTheTeam() {
                     UCI CubeSat Recruitment Form
                   </h3>
                   <p className="text-[15px] leading-[1.7] text-muted m-0 max-w-[720px]">
-                    If you are interested in joining, apply as early as you can.
+                    Apply for Avionics Software, Structures, Systems, or Operations by December 20, 2026.
                   </p>
                 </div>
                 <a

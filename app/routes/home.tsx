@@ -85,7 +85,16 @@ export default function Home() {
             Designing, testing, and launching a modular nanosatellite into
             low-Earth orbit.
           </p>
-          <div className="hero-fade-up" style={{ animationDelay: "1s" }}>
+          <div
+            className="hero-fade-up flex flex-col items-center gap-5"
+            style={{ animationDelay: "1s" }}
+          >
+            <Link
+              to="/join-the-team"
+              className="inline-flex min-h-[56px] items-center justify-center rounded-xl border border-atmosphere/50 bg-earth px-7 py-3 text-center text-[15px] font-semibold text-white shadow-[0_12px_32px_rgba(47,128,237,0.35)] transition-colors hover:bg-[#2570d4] max-sm:w-full max-sm:px-4 max-sm:text-sm"
+            >
+              Winter 2027 Applications Open →
+            </Link>
             <Link
               to="/aboutus/what-we-do"
               className="inline-block text-[15px] font-medium text-white transition-colors hover:text-atmosphere"
