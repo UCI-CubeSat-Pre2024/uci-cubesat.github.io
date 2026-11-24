@@ -73,77 +73,102 @@ function HeadshotAvatar({
 }
 
 
+
 const teamMembers = [
+ 
   // PROJECT MANAGERS
   {
     name: "Sonia Cruze",
     role: "Executive",
     position: "Project Manager",
-    image: "",
+    image: "/Headshots/SoniaCruze.webp",
   },
   {
     name: "Katie Lien",
     role: "Executive",
     position: "Project Manager",
-    image: "",
+    image: "/Headshots/KatieLien.webp",
   },
+
+  // OPERATIONS
+  {
+    name: "Hailey Williams",
+    role: "Operations",
+    position: "Subteam Lead",
+    image: "/Headshots/HaileyWilliams.webp",
+  },
+  {
+    name: "Evelyn Garcia",
+    role: "Operations",
+    position: "Member",
+    image: "/Headshots/EvelynGarcia.webp",
+  },
+  {
+    name: "Tanvi Akula",
+    role: "Operations",
+    position: "Member",
+    image: "/Headshots/TanviAkula.webp",
+  },
+
+  // AVIONICS HARDWARE
+
 
   // AVIONICS HARDWARE
   {
     name: "Mahek Ali",
     role: "Avionics",
-    position: "Subteam Lead",
-    image: "",
+    position: "Hardware Subteam Lead",
+    image: "/Headshots/MahekAli.webp",
   },
   {
     name: "Peter Hay",
     role: "Avionics",
     position: "Hardware",
-    image: "",
+    image: "/Headshots/PeterHay.webp",
   },
   {
     name: "Varaprasad Nibhanupudi",
     role: "Avionics",
     position: "Hardware",
-    image: "",
+    image: "/Headshots/VaraprasadNibhanupudi.webp",
   },
   {
     name: "Jeremiah Velasco",
     role: "Avionics",
     position: "Hardware",
-    image: "",
+    image: "/Headshots/JeremiahVelasco.webp",
   },
   {
     name: "Rohit De",
     role: "Avionics",
     position: "Hardware",
-    image: "",
+    image: "/Headshots/RohitDe.webp",
   },
 
   // AVIONICS SOFTWARE
   {
     name: "Derick Barrientos",
     role: "Avionics",
-    position: "Subteam Lead",
-    image: "",
+    position: "Software Subteam Lead",
+    image: "/Headshots/DerickBarrientos.webp",
   },
   {
     name: "Jake Yunker",
     role: "Avionics",
     position: "Software",
-    image: "",
+    image: "/Headshots/JakeYunker.webp",
   },
   {
     name: "Felicia Yin",
     role: "Avionics",
     position: "Software",
-    image: "",
+    image: "/Headshots/FeliciaYin.webp",
   },
   {
     name: "Akilan Paramasivan",
     role: "Avionics",
     position: "Software",
-    image: "",
+    image: "/Headshots/AkilanParamasivan.webp",
   },
 
   // COMMUNICATIONS
@@ -151,43 +176,37 @@ const teamMembers = [
     name: "Jonathan Lin",
     role: "Communications",
     position: "Subteam Lead",
-    image: "",
-  },
-  {
-    name: "Claire Nguyen",
-    role: "Communications",
-    position: "Member",
-    image: "",
+    image: "/Headshots/JonathanLin.webp",
   },
   {
     name: "Bart Backer",
     role: "Communications",
     position: "Member",
-    image: "",
+    image: "/Headshots/BartBacker.webp",
   },
   {
     name: "Charlie Conley",
     role: "Communications",
     position: "Member",
-    image: "",
+    image: "/Headshots/CharlieConley.webp",
   },
   {
     name: "Samuel Zubin",
     role: "Communications",
     position: "Member",
-    image: "",
+    image: "/Headshots/SamuelZubin.webp",
   },
   {
     name: "Marvin Nguyen",
     role: "Communications",
     position: "Member",
-    image: "",
+    image: "/Headshots/MarvinNguyen.webp",
   },
   {
     name: "Shining Shuai",
     role: "Communications",
     position: "Member",
-    image: "",
+    image: "/Headshots/ShiningShuai.webp",
   },
   {
     name: "Steven Yu",
@@ -201,31 +220,31 @@ const teamMembers = [
     name: "Ibrahim Hussein",
     role: "Power",
     position: "Subteam Co-Lead",
-    image: "",
+    image: "/Headshots/IbrahimHussein.webp",
   },
   {
     name: "Akam Khinda",
     role: "Power",
     position: "Subteam Co-Lead",
-    image: "",
+    image: "/Headshots/AkamKhinda.webp",
   },
   {
     name: "Thea Tan",
     role: "Power",
     position: "Member",
-    image: "",
+    image: "/Headshots/TheaTan.webp",
   },
   {
     name: "Hailey Williams",
     role: "Power",
     position: "Member",
-    image: "",
+    image: "/Headshots/HaileyWilliams.webp",
   },
   {
     name: "Jaideep Pannu",
     role: "Power",
     position: "Member",
-    image: "",
+    image: "/Headshots/JaideepPannu.webp",
   },
 
   // STRUCTURES
@@ -233,31 +252,31 @@ const teamMembers = [
     name: "Gloria McMaster-Sanchez",
     role: "Structures",
     position: "Subteam Lead",
-    image: "",
+    image: "/Headshots/GloriaMcmasterSanchez.webp",
   },
   {
     name: "Josh Luna",
     role: "Structures",
     position: "Member",
-    image: "",
+    image: "/Headshots/JoshLuna.webp",
   },
   {
     name: "Sarghi Kamboj",
     role: "Structures",
     position: "Member",
-    image: "",
+    image: "/Headshots/SarghiKamboj.webp",
   },
   {
     name: "Yuvraj Chera",
     role: "Structures",
     position: "Member",
-    image: "",
+    image: "/Headshots/YuvrajChera.webp",
   },
   {
     name: "Nathan Dorado",
     role: "Structures",
     position: "Member",
-    image: "",
+    image: "/Headshots/NathanDorado.webp",
   },
 
   // SYSTEMS
@@ -265,7 +284,7 @@ const teamMembers = [
     name: "Brayden Weimholt",
     role: "Systems",
     position: "Subteam Lead",
-    image: "",
+    image: "/Headshots/BraydenWeimholt.webp",
   },
   {
     name: "Samantha French",
@@ -277,40 +296,22 @@ const teamMembers = [
     name: "Krish Patel",
     role: "Systems",
     position: "Member",
-    image: "",
+    image: "/Headshots/KrishPatel.webp",
   },
   {
     name: "Alex Amadeo-Ranch",
     role: "Systems",
     position: "Member",
-    image: "",
+    image: "/Headshots/AlexAmadeoRanch.webp",
   },
   {
     name: "Kaden Raufdeen",
     role: "Systems",
     position: "Member",
-    image: "",
+    image: "/Headshots/KadenRaufdeen.webp",
   },
 
-  // OPERATIONS
-  {
-    name: "Hailey Williams",
-    role: "Operations",
-    position: "Subteam Lead",
-    image: "",
-  },
-  {
-    name: "Evelyn Garcia",
-    role: "Operations",
-    position: "Member",
-    image: "",
-  },
-  {
-    name: "Tanvi Akula",
-    role: "Operations",
-    position: "Member",
-    image: "",
-  },
+  
 ];
 
 
